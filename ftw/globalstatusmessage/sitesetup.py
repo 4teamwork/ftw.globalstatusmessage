@@ -5,6 +5,6 @@ def setup_site(portal):
   sm = portal.getSiteManager()
 
   if not sm.queryUtility(interfaces.iglobalstatusmessage, name='Global_Statusmessage'):
-    sm.registerUtility(SillyConfiguration(),
-                       interfaces.ISillyConfiguration,
+    sm.registerUtility(globalstatusmessage(),
+                       interfaces.iglobalstatusmessage,
                        'Global_Statusmessage')
