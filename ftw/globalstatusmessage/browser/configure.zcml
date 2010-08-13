@@ -1,0 +1,12 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+     for="Products.CMFPlone.Portal.PloneSite"
+     name="Global Statusmessage"
+     class=".config.SillyConfigurationForm"
+     permission="cmf.ManagePortal"
+     />
+
+</configure>
