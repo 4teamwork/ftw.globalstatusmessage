@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+    <import-step id="setup_site" version="20100816-01"
+              handler="ftw.globalstatusmessage.sitesetup.setup_site"
+              title="Site Setup">  
+              Site Setup
+    </import-step>
+</import-steps>

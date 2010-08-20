@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="ftw_globalstatusmessage_properties" meta_type="Plone Property Sheet">
+     <property name="title">ftw.globalstatusmessage properties</property>
+     <property name="Active" type="boolean">False</property>
+     <property name="Type" type="string">Information</property>
+     <property name="Message" type="string"></property>
+ </object>
+</object>

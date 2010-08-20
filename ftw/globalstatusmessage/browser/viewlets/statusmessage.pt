@@ -1,0 +1,14 @@
+<div id="GlobalStatusMessage" i18n:domain="ftw.globalstatusmessage" xmlns:tal="http://xml.zope.org/namespaces/tal"
+xmlns:metal="http://xml.zope.org/namespaces/metal"
+    tal:define ="gsm_props python:context.portal_properties.get('ftw_globalstatusmessage_properties', False);
+                 active python: gsm_props and gsm_props.getProperty('Active', False);
+                 type python: gsm_props and gsm_props.getProperty('Type', 'error');
+                 message python: gsm_props and gsm_props.getProperty('Message')"
+    tal:condition="active">
+    <dl class="" tal:attributes="class string: portalMessage ${type}">
+        <dt>Achtung</dt>
+        <dd tal:content= "structure message">In 5 Minuten wird der Server neu gestartet</dd>
+    </dl>
+</div>
+    
+    
