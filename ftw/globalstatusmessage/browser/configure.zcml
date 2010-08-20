@@ -2,11 +2,18 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
 
-  <browser:page
-     for="Products.CMFPlone.Portal.PloneSite"
-     name="Global Statusmessage"
-     class=".config.SillyConfigurationForm"
-     permission="cmf.ManagePortal"
-     />
-
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="global_statusmessage_config"
+        class=".config.MessageForm"
+        permission="cmf.ManagePortal"
+        />
+    <browser:viewlet
+       for="*"
+       name="ftw.globalstatusmessage.statusmessageviewlet"
+       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+       class=".viewlets.statusmessage.StatusmessageViewlet"
+       permission="zope2.View"
+       />
+        
 </configure>

@@ -1,10 +1,13 @@
-from ftw.globalstatusmessage.interfaces import ISillyConfiguration
-from ftw.globalstatusmessage.config import SillyConfiguration
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
+from ftw.globalstatusmessage.config import FormAdapter
 
 def setup_site(portal):
-  sm = portal.getSiteManager()
-
-  if not sm.queryUtility(interfaces.iglobalstatusmessage, name='Global_Statusmessage'):
-    sm.registerUtility(globalstatusmessage(),
-                       interfaces.iglobalstatusmessage,
+    
+    sm = portal.getSite()
+    sitemanager = sm.getSiteManager()
+    # import pdb; pdb.set_trace()     
+    if not sitemanager.queryUtility(IStatusMessageConfigForm, name='Global_Statusmessage'):
+        sitemanager.registerUtility(FormAdapter(),
+                        IStatusMessageConfigForm,
                        'Global_Statusmessage')
+                       

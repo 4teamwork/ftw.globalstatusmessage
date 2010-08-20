@@ -7,8 +7,10 @@
     i18n_domain="ftw.globalstatusmessage">
     
     <!-- auto include -->
-    <!--><include package="z3c.autoinclude" file="meta.zcml" />
-    <includeDependencies package="." /> -->
+    <include package="z3c.autoinclude" file="meta.zcml" />
+    <includeDependencies package="." />
+    
+    <include package=".browser" />
     
     <!-- register translations -->
     <i18n:registerTranslations directory="locales" />
@@ -20,11 +22,10 @@
          directory="profiles/default"
          description="Provides Global status message"
          provides="Products.GenericSetup.interfaces.EXTENSION"
-         />
-         
-    <adapter
-        for="Products.CMFPlone.Portal.PloneSite"
-        provides=".interfaces.iglobalstatusmessage"
-        factory=".config.form_adapter" />
+         />         
+    <adapter 
+         for="Products.CMFPlone.Portal.PloneSite"
+         provides=".interfaces.IStatusMessageConfigForm"
+         factory=".config.FormAdapter" />
     
 </configure>

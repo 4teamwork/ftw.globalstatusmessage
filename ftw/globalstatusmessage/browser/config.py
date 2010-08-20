@@ -1,10 +1,10 @@
 from zope.formlib import form
-from globalstatusmessage import _
 from Products.Five.formlib import formbase
-from interfaces import iglobalstatusmessage
-
-
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
+from ftw.globalstatusmessage import _
+from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
 class MessageForm(formbase.EditFormBase):
-    form_fields = form.Fields(message_textfield)
+    form_fields = form.Fields(IStatusMessageConfigForm)
+    form_fields['message_textfield'].custom_widget = WYSIWYGWidget
 
     label = _(u"Global Statusmessage")
