@@ -3,14 +3,15 @@ from ftw.globalstatusmessage.config import FormAdapter
 
 
 def setup_site(portal):
-    import pdb; pdb.set_trace( )
+    # import pdb; pdb.set_trace( )
     control
     sm = portal.getSite()
     sitemanager = sm.getSiteManager()
+    test= sitemanager.queryUtility(IStatusMessageConfigForm,
+     name='Global_Statusmessage')
     # import pdb; pdb.set_trace()
-    if not sitemanager.queryUtility(IStatusMessageConfigForm,
-     name='Global_Statusmessage'):
-        sitemanager.registerUtility(FormAdapter(),
+    if not test:
+        sitemanager.registerUtility(FormAdapter,
         IStatusMessageConfigForm, 'Global_Statusmessage')
 
 
