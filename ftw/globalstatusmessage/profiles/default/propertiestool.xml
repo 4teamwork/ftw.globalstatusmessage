@@ -3,7 +3,8 @@
  <object name="ftw_globalstatusmessage_properties" meta_type="Plone Property Sheet">
      <property name="title">ftw.globalstatusmessage properties</property>
      <property name="Active" type="boolean">False</property>
-     <property name="Type" type="string">Information</property>
+     <property name="Type" type="string">information</property>
+     <property name="Title" type="string">Title</property>
      <property name="Message" type="string"></property>
  </object>
 </object>

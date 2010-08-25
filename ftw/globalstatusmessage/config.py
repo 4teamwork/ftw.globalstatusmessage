@@ -7,6 +7,7 @@ import Products
 
 
 class FormAdapter(SchemaAdapterBase):
+    """this class adapts the plonesite for the Interface"""
     implements(IStatusMessageConfigForm)
     adapts(Products.CMFPlone.Portal.PloneSite)
 
@@ -29,6 +30,14 @@ class FormAdapter(SchemaAdapterBase):
     def set_type(self, value):
         self.statusProps._updateProperty('Type', value)
     type_choice = property(get_type, set_type)
+
+    def get_title(self):
+        return self.statusProps.getProperty('Title')
+
+    def set_title(self, value):
+        self.statusProps._updateProperty('Title', value)
+
+    title_textfield = property(get_title, set_title)
 
     def get_message(self):
         return self.statusProps.getProperty('Message')

@@ -3,6 +3,8 @@ from ftw.globalstatusmessage.config import FormAdapter
 
 
 def setup_site(portal):
+    import pdb; pdb.set_trace( )
+    control
     sm = portal.getSite()
     sitemanager = sm.getSiteManager()
     # import pdb; pdb.set_trace()
@@ -10,3 +12,8 @@ def setup_site(portal):
      name='Global_Statusmessage'):
         sitemanager.registerUtility(FormAdapter(),
         IStatusMessageConfigForm, 'Global_Statusmessage')
+
+
+def control(context):
+    if context.readDataFile('ftw.globalstatusmessage_various.txt') is None:
+        return

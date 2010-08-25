@@ -1,7 +1,12 @@
 from setuptools import setup, find_packages
 import os
 
+
+tests_require = [
+      'collective.testcaselayer',]
+
 version = '1.0'
+
 setup(name='ftw.globalstatusmessage',
       version=version,
       description="ermoeglicht es Ankuendigungen auf jeder Seite anzuzeigen",
@@ -25,6 +30,8 @@ setup(name='ftw.globalstatusmessage',
           'z3c.autoinclude'
           # -*- Extra requirements: -*-
       ],
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
       entry_points="""
       # -*- Entry points: -*-
       """,

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-18 08:12+0000\n"
+"POT-Creation-Date: 2010-08-23 06:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,37 +12,43 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./ftw/globalstatusmessage/profiles/default/types/globalstatusmessage.xml
-msgid "A type for quick informations."
-msgstr "Ein Typ für Schnelle informationen"
-
-#: ./ftw/globalstatusmessage/interfaces.py:8
-msgid "Active"
-msgstr "Aktiv"
-
-#: ./ftw/globalstatusmessage/interfaces.py:9
-msgid "Error"
-msgstr "Fehler"
-
-#: ./ftw/globalstatusmessage/browser/config.py:9
-#: ./ftw/globalstatusmessage/profiles/default/types/globalstatusmessage.xml
+#: ./ftw/globalstatusmessage/browser/config.py:13
 msgid "Global Statusmessage"
 msgstr "Globale Statusnachricht"
 
-#: ./ftw/globalstatusmessage/interfaces.py:10
-msgid "Message"
+#. Default: "Active"
+#: ./ftw/globalstatusmessage/interfaces.py:9
+msgid "statusmessage_label_Active"
+msgstr "Aktiv"
+
+#. Default: "error"
+#: ./ftw/globalstatusmessage/interfaces.py:15
+msgid "statusmessage_label_error"
+msgstr "Fehler"
+
+#. Default: "information"
+#: ./ftw/globalstatusmessage/interfaces.py:13
+msgid "statusmessage_label_information"
+msgstr "Information"
+
+#. Default: "Message"
+#: ./ftw/globalstatusmessage/interfaces.py:21
+msgid "statusmessage_label_message"
 msgstr "Nachricht"
 
-#: ./ftw/globalstatusmessage/interfaces.py:9
-msgid "Type"
+#. Default: "Title"
+#: ./ftw/globalstatusmessage/interfaces.py:18
+msgid "statusmessage_label_title"
+msgstr "Titel"
+
+#. Default: "Type"
+#: ./ftw/globalstatusmessage/interfaces.py:12
+msgid "statusmessage_label_type"
 msgstr "Typ"
 
-#: ./ftw/globalstatusmessage/interfaces.py:9
-msgid "Warning"
+#. Default: "warning"
+#: ./ftw/globalstatusmessage/interfaces.py:14
+msgid "statusmessage_label_warning"
 msgstr "Warnung"
-
-#: ./ftw/globalstatusmessage/interfaces.py:9
-msgid "information"
-msgstr "Information"
 
 

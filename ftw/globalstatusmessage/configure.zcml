@@ -22,7 +22,9 @@
          directory="profiles/default"
          description="Provides Global status message"
          provides="Products.GenericSetup.interfaces.EXTENSION"
-         />         
+         />  
+    
+    <!-- Register the adapter who adapts the plonesite for the Interface-->
     <adapter 
          for="Products.CMFPlone.Portal.PloneSite"
          provides=".interfaces.IStatusMessageConfigForm"
