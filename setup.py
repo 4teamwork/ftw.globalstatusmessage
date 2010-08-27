@@ -34,5 +34,7 @@ setup(name='ftw.globalstatusmessage',
       extras_require=dict(tests=tests_require),
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
