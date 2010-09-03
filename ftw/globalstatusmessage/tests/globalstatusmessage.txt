@@ -1,0 +1,24 @@
+# make globalstatusmessage active and enter some values:
+
+>>> self.setRoles(['Contributor'])
+>>> from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
+>>> from ftw.globalstatusmessage.config import FormAdapter
+>>> testConfig = IStatusMessageConfigForm(self.portal)
+>>> testConfig.get_active()
+False
+>>> testConfig.set_active(True)
+>>> testConfig.get_active()
+True
+>>> testConfig.set_message("Test")
+>>> testConfig.get_message()
+'Test'
+>>> testConfig.get_title()
+'Title'
+>>> testConfig.set_title("Information")
+>>> testConfig.get_title()
+'Information'
+>>> testConfig.get_type()
+'information'
+>>> testConfig.set_type("error")
+>>> testConfig.get_type()
+'error'
