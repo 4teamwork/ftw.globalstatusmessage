@@ -7,8 +7,7 @@ def setup_site(portal):
     sm = portal.getSite()
     sitemanager = sm.getSiteManager()
     test= sitemanager.queryUtility(IStatusMessageConfigForm,
-     name='Global_Statusmessage')
-    # import pdb; pdb.set_trace()
+        name='Global_Statusmessage')
     if not test:
         sitemanager.registerUtility(FormAdapter,
         IStatusMessageConfigForm, 'Global_Statusmessage')
