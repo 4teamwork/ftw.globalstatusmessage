@@ -40,8 +40,12 @@ class FormAdapter(SchemaAdapterBase):
     title_textfield = property(get_title, set_title)
 
     def get_message(self):
-        return self.statusProps.getProperty('Message')
+         return self.statusProps.getProperty('Message').decode('utf-8')
 
     def set_message(self, value):
-        self.statusProps._updateProperty('Message', value)
+
+        if not value:
+            value = ""
+
+        self.statusProps._updateProperty('Message', value.encode('utf-8'))
     message_textfield = property(get_message, set_message)
