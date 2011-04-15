@@ -11,7 +11,7 @@ False
 True
 >>> testConfig.set_message("Test")
 >>> testConfig.get_message()
-'Test'
+u'Test'
 >>> testConfig.get_title()
 'Title'
 >>> testConfig.set_title("Information")
