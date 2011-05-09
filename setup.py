@@ -5,7 +5,12 @@ import os
 tests_require = [
       'collective.testcaselayer',]
 
-version = '1.0'
+def read(*rnames):
+    return open('/'.join(rnames)).read()
+
+version = open('ftw/globalstatusmessage/version.txt').read().strip()
+maintainer = 'Mathias Leimgruber'
+
 
 setup(name='ftw.globalstatusmessage',
       version=version,
