@@ -1,6 +1,10 @@
 Changelog
 =========
 
+
+1.1
+---
+
 1.0-dev
 -------
 * Fix egg structure / added readme
