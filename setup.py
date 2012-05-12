@@ -3,7 +3,8 @@ import os
 
 
 tests_require = [
-      'collective.testcaselayer',]
+      'collective.testcaselayer',
+      'Plone']
 
 def read(*rnames):
     return open('/'.join(rnames)).read()
