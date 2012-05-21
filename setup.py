@@ -35,7 +35,8 @@ setup(name='ftw.globalstatusmessage',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'z3c.autoinclude'
+          'z3c.autoinclude',
+          'plone.z3cform',
           # -*- Extra requirements: -*-
       ],
       tests_require=tests_require,
