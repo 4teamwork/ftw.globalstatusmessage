@@ -2,13 +2,16 @@ Changelog
 =========
 
 
-1.1
----
+1.0.1 (unreleased)
+------------------
 
-1.0-dev
--------
-* Fix egg structure / added readme
-  [09.05.2011, mathias.leimgruber]
+- Prepare for public release.
+  [mathias.leimgruber]
 
-* Initial release
+1.0 (2011-04-12)
+----------------
+- Fix egg structure / added readme
+  [mathias.leimgruber]
+
+- Initial release
   [ttschanz]

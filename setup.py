@@ -6,19 +6,21 @@ tests_require = [
       'collective.testcaselayer',
       'Plone']
 
+
 def read(*rnames):
     return open('/'.join(rnames)).read()
 
-version = open('ftw/globalstatusmessage/version.txt').read().strip()
+version = '1.0.1.dev0'
 maintainer = 'Mathias Leimgruber'
 
 
 setup(name='ftw.globalstatusmessage',
       version=version,
-      description="ermoeglicht es Ankuendigungen auf jeder Seite anzuzeigen",
-      long_description=open("README.txt").read() + "\n" +
+      description="Shows a global message on every site.",
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      # Get more strings from
+      # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
         ],
