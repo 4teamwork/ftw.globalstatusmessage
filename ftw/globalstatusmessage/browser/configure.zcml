@@ -1,11 +1,11 @@
-<configure 
+<configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
 
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="global_statusmessage_config"
-        class=".config.MessageForm"
+        class=".config.GlobalStatusMessageView"
         permission="cmf.ManagePortal"
         />
     <browser:viewlet
@@ -15,5 +15,5 @@
        class=".viewlets.statusmessage.StatusmessageViewlet"
        permission="zope2.View"
        />
-        
+
 </configure>

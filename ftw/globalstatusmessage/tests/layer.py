@@ -5,7 +5,7 @@ class GSMIntegrationLayer(BasePTCLayer):
     """Layer for integration tests."""
 
     def afterSetUp(self):
-        
+
         # Load testing zcml (optional)
         # self.loadZCML('testing.zcml', package=tests)
 

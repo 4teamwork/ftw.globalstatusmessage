@@ -1,15 +1,15 @@
 from zope.interface import implements
-from interfaces import IStatusMessageConfigForm
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFCore.utils import getToolByName
 from zope.component import adapts
-import Products
+from Products.CMFPlone.Portal import PloneSite
 
 
 class FormAdapter(SchemaAdapterBase):
     """this class adapts the plonesite for the Interface"""
     implements(IStatusMessageConfigForm)
-    adapts(Products.CMFPlone.Portal.PloneSite)
+    adapts(PloneSite)
 
     def __init__(self, context):
         super(FormAdapter, self).__init__(context)
@@ -40,7 +40,7 @@ class FormAdapter(SchemaAdapterBase):
     title_textfield = property(get_title, set_title)
 
     def get_message(self):
-         return self.statusProps.getProperty('Message').decode('utf-8')
+        return self.statusProps.getProperty('Message').decode('utf-8')
 
     def set_message(self, value):
 

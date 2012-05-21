@@ -5,16 +5,16 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.globalstatusmessage">
-    
+
     <!-- auto include -->
     <include package="z3c.autoinclude" file="meta.zcml" />
     <includeDependencies package="." />
-    
+
     <include package=".browser" />
-    
+
     <!-- register translations -->
     <i18n:registerTranslations directory="locales" />
-    
+
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
          name="default"
@@ -22,12 +22,12 @@
          directory="profiles/default"
          description="Provides Global status message"
          provides="Products.GenericSetup.interfaces.EXTENSION"
-         />  
-    
+         />
+
     <!-- Register the adapter who adapts the plonesite for the Interface-->
-    <adapter 
+    <adapter
          for="Products.CMFPlone.Portal.PloneSite"
          provides=".interfaces.IStatusMessageConfigForm"
          factory=".config.FormAdapter" />
-    
+
 </configure>

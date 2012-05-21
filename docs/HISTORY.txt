@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
-------------------
+1.1 (unreleased)
+----------------
+
+- Make Plone 4.1.x compatible.
+  [mathias.leimgruber]
 
 - Prepare for public release.
   [mathias.leimgruber]

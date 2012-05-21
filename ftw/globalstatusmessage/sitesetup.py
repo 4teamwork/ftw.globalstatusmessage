@@ -6,11 +6,11 @@ def setup_site(portal):
     control
     sm = portal.getSite()
     sitemanager = sm.getSiteManager()
-    test= sitemanager.queryUtility(IStatusMessageConfigForm,
+    test = sitemanager.queryUtility(IStatusMessageConfigForm,
         name='Global_Statusmessage')
     if not test:
         sitemanager.registerUtility(FormAdapter,
-        IStatusMessageConfigForm, 'Global_Statusmessage')
+            IStatusMessageConfigForm, 'Global_Statusmessage')
 
 
 def control(context):
