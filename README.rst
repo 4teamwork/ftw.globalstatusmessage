@@ -1,7 +1,6 @@
 Introduction
 ============
 
-
 ``ftw.globalstatusmessage`` displays a global static plone-like statusmessage.
 Configurable throught the plone control panel.
 
@@ -27,6 +26,4 @@ Copyright
 
 This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
 
-``ftw.tooltip`` is licensed under GNU General Public License, version 2.
-
-
+``ftw.globalstatusmessage`` is licensed under GNU General Public License, version 2.
