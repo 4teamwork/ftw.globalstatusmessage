@@ -22,9 +22,15 @@ setup(name='ftw.globalstatusmessage',
           open(os.path.join("docs", "HISTORY.txt")).read(),
 
       # Get more strings from
-      # http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
+
       classifiers=[
-        "Programming Language :: Python",
+        'Framework :: Plone',
+        'Framework :: Plone :: 4.0',
+        'Framework :: Plone :: 4.1',
+        'Framework :: Plone :: 4.2',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Libraries :: Python Modules',
         ],
 
       keywords='ftw global status message plone',
