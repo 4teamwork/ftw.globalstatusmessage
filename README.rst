@@ -12,6 +12,13 @@ Currently 3 types are supported:
 
 
 
+Compatibility
+=============
+
+Runs with `Plone <http://www.plone.org/>`_ `4.0`, `4.1`, `4.2`, `4.3`.
+
+
+
 Links
 =====
 
