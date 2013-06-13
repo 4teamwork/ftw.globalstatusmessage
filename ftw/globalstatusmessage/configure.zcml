@@ -10,7 +10,11 @@
     <include package="z3c.autoinclude" file="meta.zcml" />
     <includeDependencies package="." />
 
+    <include file="permissions.zcml" />
+    <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
+
     <include package=".browser" />
+    <include package=".upgrades" />
 
     <!-- register translations -->
     <i18n:registerTranslations directory="locales" />

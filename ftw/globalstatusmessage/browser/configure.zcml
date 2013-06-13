@@ -6,7 +6,7 @@
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="global_statusmessage_config"
         class=".config.GlobalStatusMessageView"
-        permission="cmf.ManagePortal"
+        permission="ftw.globalstatusmessage.EditMessage"
         />
     <browser:viewlet
        for="*"

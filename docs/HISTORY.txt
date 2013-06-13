@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-1.1.1 (unreleased)
-------------------
+1.2 (unreleased)
+----------------
+
+- Use own permission to manage globalstatusmessages.
+  [Julian Infanger]
 
 - Drop Plone 4.0 support.
   [jone]

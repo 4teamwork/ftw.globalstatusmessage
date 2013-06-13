@@ -11,7 +11,7 @@ tests_require = [
 def read(*rnames):
     return open('/'.join(rnames)).read()
 
-version = '1.1.1.dev0'
+version = '1.2.dev0'
 maintainer = 'Mathias Leimgruber'
 
 
@@ -48,6 +48,7 @@ setup(name='ftw.globalstatusmessage',
         'setuptools',
         'z3c.autoinclude',
         'plone.z3cform',
+        'ftw.upgrade',
         # -*- Extra requirements: -*-
         ],
       tests_require=tests_require,

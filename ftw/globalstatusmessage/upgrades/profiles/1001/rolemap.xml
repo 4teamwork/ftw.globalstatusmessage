@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="ftw.globalstatusmessage: Edit message" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+    </permission>
+  </permissions>
+</rolemap>
