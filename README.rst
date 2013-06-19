@@ -1,15 +1,16 @@
 Introduction
 ============
 
-``ftw.globalstatusmessage`` displays a global static plone-like statusmessage.
-Configurable throught the plone control panel.
+With ``ftw.globalstatusmessage`` a Plone site administrator display messages
+on all pages.
 
-Currently 3 types are supported:
+This is useful for inform the users about an upcoming maintance downtime or
+any other important thing.
 
-- info (green)
-- warning (orange)
-- error (red)
+The message can be changed in the plone control panel:
 
+
+.. image:: https://raw.github.com/4teamwork/ftw.inflator/master/docs/screenshot.png
 
 
 Compatibility
