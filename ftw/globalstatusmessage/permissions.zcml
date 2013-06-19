@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="ftw.globalstatusmessage">
+
+    <permission
+        id="ftw.globalstatusmessage.EditMessage"
+        title="ftw.globalstatusmessage: Edit message"
+        />
+
+</configure>

@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ftw.globalstatusmessage">
+
+    <!-- 1 -> 1001 -->
+    <genericsetup:upgradeStep
+        title="Use own permission for controlpanel"
+        description=""
+        source="1"
+        destination="1001"
+        handler="ftw.globalstatusmessage.upgrades.to1001.UpgradePermission"
+        profile="ftw.globalstatusmessage:default"
+        />
+
+    <genericsetup:registerProfile
+        name="1001"
+        title="ftw.globalstatusmessage.upgrades.1001"
+        description=""
+        directory="profiles/1001"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>
