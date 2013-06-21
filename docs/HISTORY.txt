@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2 (unreleased)
+1.2 (2013-06-21)
 ----------------
 
 - Use own permission to manage globalstatusmessages.
