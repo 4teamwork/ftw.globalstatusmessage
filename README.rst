@@ -10,7 +10,7 @@ any other important thing.
 The message can be changed in the plone control panel:
 
 
-.. image:: https://raw.github.com/4teamwork/ftw.inflator/master/docs/screenshot.png
+.. image:: https://raw.github.com/4teamwork/ftw.globalstatusmessage/master/docs/screenshot.png
 
 
 Compatibility
