@@ -1,8 +1,8 @@
-from z3c.form import form, field
-from plone.z3cform.layout import wrap_form
-from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage import _
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
+from plone.z3cform.layout import wrap_form
+from z3c.form import form, field
 
 
 class GlobalStatusMessageForm(form.EditForm):

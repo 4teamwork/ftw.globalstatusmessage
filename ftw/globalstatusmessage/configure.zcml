@@ -21,17 +21,17 @@
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
-         name="default"
-         title="ftw.globalstatusmessage"
-         directory="profiles/default"
-         description="Provides Global status message"
-         provides="Products.GenericSetup.interfaces.EXTENSION"
-         />
+        name="default"
+        title="ftw.globalstatusmessage"
+        directory="profiles/default"
+        description="Provides Global status message"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
 
     <!-- Register the adapter who adapts the plonesite for the Interface-->
     <adapter
-         for="Products.CMFPlone.Portal.PloneSite"
-         provides=".interfaces.IStatusMessageConfigForm"
-         factory=".config.FormAdapter" />
+        for="Products.CMFPlone.Portal.PloneSite"
+        provides=".interfaces.IStatusMessageConfigForm"
+        factory=".config.FormAdapter" />
 
 </configure>
