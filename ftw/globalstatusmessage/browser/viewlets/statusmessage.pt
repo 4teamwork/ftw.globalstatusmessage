@@ -11,4 +11,3 @@ xmlns:metal="http://xml.zope.org/namespaces/metal"
         <dd tal:content= "structure message">This is a sample Message</dd>
     </dl>
 </div>
-

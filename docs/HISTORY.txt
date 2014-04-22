@@ -5,6 +5,10 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Protect statusmessage viewlet with browserlayer.
+  The viewlet should not be rendered when the package is not installed.
+  [jone]
+
 - Replace old PloneTestCase tests with p.a.testing tests.
   [jone]
 

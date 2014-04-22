@@ -1,5 +1,4 @@
 from ftw.globalstatusmessage import _
-from plone.theme.interfaces import IDefaultPloneLayer
 from zope import schema
 from zope.interface import Interface
 
@@ -27,6 +26,6 @@ class IStatusMessageConfigForm(Interface):
         required=False)
 
 
-class IGlobalStatusMessageLayer(IDefaultPloneLayer):
-    """Marker interface that defines a Zope 3 browser layer.
+class IGlobalStatusMessageLayer(Interface):
+    """ftw.globalstatusmessage browser layer.
     """

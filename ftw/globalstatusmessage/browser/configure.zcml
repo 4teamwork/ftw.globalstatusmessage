@@ -15,6 +15,7 @@
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".viewlets.statusmessage.StatusmessageViewlet"
         permission="zope2.View"
+        layer="ftw.globalstatusmessage.interfaces.IGlobalStatusMessageLayer"
         />
 
 </configure>
