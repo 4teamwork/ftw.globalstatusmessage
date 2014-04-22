@@ -1,0 +1,4 @@
+<layers>
+    <layer name="ftw.globalstatusmessage"
+           interface="ftw.globalstatusmessage.interfaces.IGlobalStatusMessageLayer" />
+</layers>

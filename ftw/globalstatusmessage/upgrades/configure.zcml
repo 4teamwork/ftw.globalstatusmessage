@@ -1,7 +1,10 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="ftw.globalstatusmessage">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
 
     <!-- 1 -> 1001 -->
     <genericsetup:upgradeStep
@@ -20,6 +23,25 @@
         directory="profiles/1001"
         for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <!-- 1001 -> 1002 -->
+    <upgrade-step:importProfile
+        title="Install browserlayer."
+        profile="ftw.globalstatusmessage:default"
+        source="1001"
+        destination="1002"
+        directory="profiles/1002"
+        />
+
+    <!-- 1002 -> 1003 -->
+    <genericsetup:upgradeStep
+        title="Remove unused utility."
+        description=""
+        source="1002"
+        destination="1003"
+        handler="ftw.globalstatusmessage.upgrades.to1003.RemoveUtility"
+        profile="ftw.globalstatusmessage:default"
         />
 
 </configure>

@@ -8,12 +8,14 @@
         class=".config.GlobalStatusMessageView"
         permission="ftw.globalstatusmessage.EditMessage"
         />
+
     <browser:viewlet
-       for="*"
-       name="ftw.globalstatusmessage.statusmessageviewlet"
-       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-       class=".viewlets.statusmessage.StatusmessageViewlet"
-       permission="zope2.View"
-       />
+        for="*"
+        name="ftw.globalstatusmessage.statusmessageviewlet"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.statusmessage.StatusmessageViewlet"
+        permission="zope2.View"
+        layer="ftw.globalstatusmessage.interfaces.IGlobalStatusMessageLayer"
+        />
 
 </configure>

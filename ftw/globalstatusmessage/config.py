@@ -1,18 +1,19 @@
-from zope.interface import implements
-from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
-from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces import IPloneSiteRoot
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from zope.component import adapts
-from Products.CMFPlone.Portal import PloneSite
+from zope.interface import implements
 
 
-class FormAdapter(SchemaAdapterBase):
-    """this class adapts the plonesite for the Interface"""
+class FormAdapter(object):
+    """This adapter acts as propagating storage for the z3c edit form,
+    which does something like
+    IStatusMessageConfigForm(self.context).message = '...'
+    """
     implements(IStatusMessageConfigForm)
-    adapts(PloneSite)
+    adapts(IPloneSiteRoot)
 
     def __init__(self, context):
-        super(FormAdapter, self).__init__(context)
         pprop = getToolByName(context, 'portal_properties')
         self.statusProps = pprop.ftw_globalstatusmessage_properties
 
