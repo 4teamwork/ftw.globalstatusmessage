@@ -3,8 +3,10 @@ import os
 
 
 tests_require = [
-    'collective.testcaselayer',
-    'Products.PloneTestCase',
+    'ftw.testbrowser',
+    'plone.app.testing',
+    'unittest2',
+    'zope.configuration',
     ]
 
 

@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Replace old PloneTestCase tests with p.a.testing tests.
+  [jone]
+
 - Remove z3c.autoinclude includeDependencies, no longer required.
   [jone]
 
