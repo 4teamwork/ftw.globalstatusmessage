@@ -5,7 +5,8 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove z3c.autoinclude includeDependencies, no longer required.
+  [jone]
 
 
 1.2 (2013-06-21)

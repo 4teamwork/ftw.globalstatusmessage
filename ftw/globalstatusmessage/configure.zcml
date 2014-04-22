@@ -6,10 +6,6 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.globalstatusmessage">
 
-    <!-- auto include -->
-    <include package="z3c.autoinclude" file="meta.zcml" />
-    <includeDependencies package="." />
-
     <include file="permissions.zcml" />
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
     <include package=".browser" />
