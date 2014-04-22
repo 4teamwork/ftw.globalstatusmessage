@@ -4,7 +4,7 @@ import os
 
 tests_require = [
     'collective.testcaselayer',
-    'Plone',
+    'Products.PloneTestCase',
     ]
 
 
@@ -45,11 +45,23 @@ setup(name='ftw.globalstatusmessage',
       zip_safe=False,
 
       install_requires=[
+        'Products.CMFCore',
+        'Products.CMFDefault',
+        'Products.CMFPlone',
+        'Products.GenericSetup',
+        'Zope2',
+        'ftw.upgrade',
+        'plone.app.form',
+        'plone.app.layout',
+        'plone.theme',
+        'plone.z3cform',
         'setuptools',
         'z3c.autoinclude',
-        'plone.z3cform',
-        'ftw.upgrade',
-        # -*- Extra requirements: -*-
+        'z3c.form',
+        'zope.component',
+        'zope.i18nmessageid',
+        'zope.interface',
+        'zope.schema',
         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
