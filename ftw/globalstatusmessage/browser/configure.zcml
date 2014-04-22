@@ -8,6 +8,7 @@
         class=".config.GlobalStatusMessageView"
         permission="ftw.globalstatusmessage.EditMessage"
         />
+
     <browser:viewlet
         for="*"
         name="ftw.globalstatusmessage.statusmessageviewlet"

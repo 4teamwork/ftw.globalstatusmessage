@@ -12,14 +12,11 @@
 
     <include file="permissions.zcml" />
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
-
     <include package=".browser" />
     <include package=".upgrades" />
 
-    <!-- register translations -->
     <i18n:registerTranslations directory="locales" />
 
-    <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
         name="default"
         title="ftw.globalstatusmessage"
@@ -28,7 +25,6 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
-    <!-- Register the adapter who adapts the plonesite for the Interface-->
     <adapter
         for="Products.CMFPlone.Portal.PloneSite"
         provides=".interfaces.IStatusMessageConfigForm"
