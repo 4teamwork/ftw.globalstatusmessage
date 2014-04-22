@@ -22,7 +22,7 @@
         />
 
     <adapter
-        for="Products.CMFPlone.Portal.PloneSite"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         provides=".interfaces.IStatusMessageConfigForm"
         factory=".config.FormAdapter" />
 
