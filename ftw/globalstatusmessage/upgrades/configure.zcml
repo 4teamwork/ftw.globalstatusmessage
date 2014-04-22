@@ -34,4 +34,14 @@
         directory="profiles/1002"
         />
 
+    <!-- 1002 -> 1003 -->
+    <genericsetup:upgradeStep
+        title="Remove unused utility."
+        description=""
+        source="1002"
+        destination="1003"
+        handler="ftw.globalstatusmessage.upgrades.to1003.RemoveUtility"
+        profile="ftw.globalstatusmessage:default"
+        />
+
 </configure>

@@ -48,7 +48,6 @@ setup(name='ftw.globalstatusmessage',
 
       install_requires=[
         'Products.CMFCore',
-        'Products.CMFDefault',
         'Products.CMFPlone',
         'Products.GenericSetup',
         'Zope2',

@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Remove no longer used utility.
+  [jone]
+
 - Protect statusmessage viewlet with browserlayer.
   The viewlet should not be rendered when the package is not installed.
   [jone]
