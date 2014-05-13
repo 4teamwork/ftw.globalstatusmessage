@@ -1,0 +1,55 @@
+# Héctor Velarde <hector.velarde@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-08-23 06:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./ftw/globalstatusmessage/browser/config.py:13
+msgid "Global Statusmessage"
+msgstr "Mensaje de estado global"
+
+#. Default: "Active"
+#: ./ftw/globalstatusmessage/interfaces.py:9
+msgid "statusmessage_label_Active"
+msgstr "Activo"
+
+#. Default: "error"
+#: ./ftw/globalstatusmessage/interfaces.py:15
+msgid "statusmessage_label_error"
+msgstr "Error"
+
+#. Default: "information"
+#: ./ftw/globalstatusmessage/interfaces.py:13
+msgid "statusmessage_label_information"
+msgstr "Información"
+
+#. Default: "Message"
+#: ./ftw/globalstatusmessage/interfaces.py:21
+msgid "statusmessage_label_message"
+msgstr "Mensaje"
+
+#. Default: "Title"
+#: ./ftw/globalstatusmessage/interfaces.py:18
+msgid "statusmessage_label_title"
+msgstr "Título"
+
+#. Default: "Type"
+#: ./ftw/globalstatusmessage/interfaces.py:12
+msgid "statusmessage_label_type"
+msgstr "Tipo"
+
+#. Default: "warning"
+#: ./ftw/globalstatusmessage/interfaces.py:14
+msgid "statusmessage_label_warning"
+msgstr "Advertencia"
+
+
