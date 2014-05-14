@@ -32,6 +32,27 @@ Plone 4.3
    :target: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.3.x.cfg
 
 
+Installation
+============
+
+- Add ``ftw.globalstatusmessage`` to your buildout configuration:
+
+::
+
+    [instance]
+    eggs +=
+        ftw.globalstatusmessage
+
+- Install the generic import profile.
+
+
+Uninstall
+=========
+
+This package provides an uninstall Generic Setup profile.
+Uninstall the package by using Plone's addon controlpanel or portal_quickInstaller.
+
+
 
 Links
 =====

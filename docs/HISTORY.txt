@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Implement uninstall profile.
+  [jone]
+
 - Remove no longer used utility.
   [jone]
 
