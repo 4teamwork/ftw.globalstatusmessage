@@ -4,6 +4,7 @@ import os
 
 tests_require = [
     'ftw.testbrowser',
+    'ftw.testing',
     'plone.app.testing',
     'unittest2',
     'zope.configuration',

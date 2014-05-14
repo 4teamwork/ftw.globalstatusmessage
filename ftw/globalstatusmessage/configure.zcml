@@ -11,6 +11,7 @@
     <include package=".browser" />
     <include package=".upgrades" />
 
+    <five:registerPackage package="." initialize=".initialize" />
     <i18n:registerTranslations directory="locales" />
 
     <genericsetup:registerProfile
@@ -19,6 +20,21 @@
         directory="profiles/default"
         description="Provides Global status message"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="Uninstall ftw.globalstatusmessage"
+        directory="profiles/uninstall"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        />
+
+    <genericsetup:importStep
+        name="ftw.globalstatusmessage.various"
+        title="ftw.globalstatusmessage custom import handlers"
+        description=""
+        handler="ftw.globalstatusmessage.setuphandlers.import_various"
         />
 
     <adapter
