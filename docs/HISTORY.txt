@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Brazilian Portuguese and Spanish translations were added.
+  [hvelarde]
+
 - Implement uninstall profile.
   [jone]
 
