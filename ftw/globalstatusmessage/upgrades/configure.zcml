@@ -44,4 +44,14 @@
         profile="ftw.globalstatusmessage:default"
         />
 
+    <!-- 1003 -> 1004 -->
+    <genericsetup:upgradeStep
+        title="Migrate configlet to plone.app.registry"
+        description=""
+        source="1003"
+        destination="1004"
+        handler="ftw.globalstatusmessage.upgrades.to1004.MigrateConfiglet"
+        profile="ftw.globalstatusmessage:default"
+        />
+
 </configure>

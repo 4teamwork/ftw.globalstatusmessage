@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
+from ftw.globalstatusmessage.config import PROJECTNAME
 from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
 from plone.app.testing import logout
 from zope.component import getMultiAdapter
 
 import unittest2 as unittest
-
-PROJECTNAME = 'ftw.globalstatusmessage'
 
 
 class ControlPanelTestCase(unittest.TestCase):

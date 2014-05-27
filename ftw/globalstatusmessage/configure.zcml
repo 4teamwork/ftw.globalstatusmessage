@@ -6,6 +6,7 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.globalstatusmessage">
 
+    <include package="plone.app.registry" />
     <include file="permissions.zcml" />
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
     <include package=".browser" />
@@ -36,10 +37,5 @@
         description=""
         handler="ftw.globalstatusmessage.setuphandlers.import_various"
         />
-
-    <adapter
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        provides=".interfaces.IStatusMessageConfigForm"
-        factory=".config.FormAdapter" />
 
 </configure>

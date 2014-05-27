@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 from ftw.globalstatusmessage import _
+from plone.directives import form
 from zope import schema
 from zope.interface import Interface
 
 
-class IStatusMessageConfigForm(Interface):
+class IStatusMessageConfigForm(form.Schema):
     """This interface defines the configlet."""
 
     enabled_bool = schema.Bool(
