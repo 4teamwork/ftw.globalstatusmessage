@@ -3,6 +3,7 @@ import os
 
 
 tests_require = [
+    'AccessControl',
     'ftw.testbrowser',
     'ftw.testing',
     'plone.app.testing',
@@ -58,6 +59,7 @@ setup(name='ftw.globalstatusmessage',
         'plone.app.layout',
         'plone.app.registry',
         'plone.directives.form',
+        'plone.registry',
         'plone.z3cform',
         'setuptools',
         'z3c.form',
