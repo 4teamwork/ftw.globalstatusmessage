@@ -5,7 +5,7 @@
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="global_statusmessage_config"
-        class=".config.GlobalStatusMessageView"
+        class=".controlpanel.StatusMessageControlPanel"
         permission="ftw.globalstatusmessage.EditMessage"
         />
 

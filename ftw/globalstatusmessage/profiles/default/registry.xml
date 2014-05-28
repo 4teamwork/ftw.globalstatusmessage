@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<registry>
+  <records interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" />
+  <record interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" field="enabled_bool">
+    <field type="plone.registry.field.Bool">
+      <title>Active</title>
+      <required>False</required>
+    </field>
+  </record>
+  <record interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" field="type_choice">
+    <field type="plone.registry.field.Choice">
+      <title>Type</title>
+      <required>False</required>
+      <values>
+        <element>information</element>
+        <element>warning</element>
+        <element>error</element>
+      </values>
+    </field>
+  </record>
+  <record interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" field="title_textfield">
+    <field type="plone.registry.field.TextLine">
+      <title>Title</title>
+      <required>False</required>
+    </field>
+  </record>
+  <record interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" field="message_textfield">
+    <field type="plone.registry.field.Text">
+      <title>Message</title>
+      <required>False</required>
+    </field>
+  </record>
+</registry>
