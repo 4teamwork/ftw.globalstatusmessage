@@ -38,6 +38,6 @@ class TestIsPathIncluded(TestCase):
             excluded=['/plone/siteA'])
 
     def assert_inclusion(self, expectation, included, excluded):
-        got = {path: is_path_included(path, included, excluded)
-               for path in expectation.keys()}
+        got = dict((path, is_path_included(path, included, excluded))
+                   for path in expectation.keys())
         self.assertEquals(expectation, got)

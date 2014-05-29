@@ -15,6 +15,12 @@
     <five:registerPackage package="." initialize=".initialize" />
     <i18n:registerTranslations directory="locales" />
 
+    <utility
+        name="ftw.globalstatusmessage:sites_vocabulary"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabularies.sites_vocabulary_factory"
+        />
+
     <genericsetup:registerProfile
         name="default"
         title="ftw.globalstatusmessage"

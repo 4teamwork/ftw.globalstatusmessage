@@ -10,7 +10,7 @@ import logging
 import sys
 
 
-handler = logging.StreamHandler(stream=sys.stderr)
+handler = logging.StreamHandler(sys.stderr)
 logging.root.addHandler(handler)
 
 

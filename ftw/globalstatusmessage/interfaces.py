@@ -27,6 +27,19 @@ class IStatusMessageConfigForm(form.Schema):
         title=_(u"statusmessage_label_message", default=u"Message"),
         required=False)
 
+    exclude_sites = schema.List(
+        title=_(u'statusmessage_label_exclude_sites',
+                default=u'Exclude sites'),
+        description=_(u'statusmessage_help_exclude_sites',
+                      default=u'The message will not be shown on any content'
+                      u' within containers which are selected here.'
+                      u' If however a container is selected but a selectable'
+                      u' sub container is not selected, contents within the'
+                      u' the sub container will display the message.'),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary='ftw.globalstatusmessage:sites_vocabulary'))
+
 
 class IGlobalStatusMessageLayer(Interface):
     """ftw.globalstatusmessage browser layer.
