@@ -3,6 +3,12 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import applyProfile
 from zope.configuration import xmlconfig
+import logging
+import sys
+
+
+handler = logging.StreamHandler(stream=sys.stderr)
+logging.root.addHandler(handler)
 
 
 class ZCMLLayer(PloneSandboxLayer):
