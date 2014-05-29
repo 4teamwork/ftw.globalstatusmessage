@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-27 18:37+0000\n"
+"POT-Creation-Date: 2014-05-29 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,35 +26,45 @@ msgstr ""
 msgid "Settings for Global Status Message."
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:22
+#: ./ftw/globalstatusmessage/interfaces.py:19
 msgid "error"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:20
+#: ./ftw/globalstatusmessage/interfaces.py:17
 msgid "information"
 msgstr ""
 
+#. Default: "The message will not be shown on any content within containers which are selected here. If however a container is selected but a selectable sub container is not selected, contents within the the sub container will display the message."
+#: ./ftw/globalstatusmessage/interfaces.py:33
+msgid "statusmessage_help_exclude_sites"
+msgstr ""
+
 #. Default: "Active"
-#: ./ftw/globalstatusmessage/interfaces.py:13
+#: ./ftw/globalstatusmessage/interfaces.py:12
 msgid "statusmessage_label_Active"
 msgstr ""
 
+#. Default: "Exclude sites"
+#: ./ftw/globalstatusmessage/interfaces.py:31
+msgid "statusmessage_label_exclude_sites"
+msgstr ""
+
 #. Default: "Message"
-#: ./ftw/globalstatusmessage/interfaces.py:33
+#: ./ftw/globalstatusmessage/interfaces.py:27
 msgid "statusmessage_label_message"
 msgstr ""
 
 #. Default: "Title"
-#: ./ftw/globalstatusmessage/interfaces.py:28
+#: ./ftw/globalstatusmessage/interfaces.py:23
 msgid "statusmessage_label_title"
 msgstr ""
 
 #. Default: "Type"
-#: ./ftw/globalstatusmessage/interfaces.py:18
+#: ./ftw/globalstatusmessage/interfaces.py:16
 msgid "statusmessage_label_type"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:21
+#: ./ftw/globalstatusmessage/interfaces.py:18
 msgid "warning"
 msgstr ""
 
