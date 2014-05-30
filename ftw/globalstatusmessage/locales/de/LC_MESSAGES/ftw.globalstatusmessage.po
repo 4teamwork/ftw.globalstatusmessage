@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-23 06:37+0000\n"
+"POT-Creation-Date: 2014-05-29 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,45 +10,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
 
-#: ./ftw/globalstatusmessage/browser/config.py:13
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:9
+msgid "Global Status Message"
+msgstr "Globale Statusnachricht"
+
+#: ./ftw/globalstatusmessage/browser/config.py:14
 msgid "Global Statusmessage"
 msgstr "Globale Statusnachricht"
 
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:10
+msgid "Settings for Global Status Message."
+msgstr "Einstellungen für Globale Statusnachricht"
+
+#: ./ftw/globalstatusmessage/interfaces.py:19
+msgid "error"
+msgstr "Fehler"
+
+#: ./ftw/globalstatusmessage/interfaces.py:17
+msgid "information"
+msgstr "Information"
+
+#. Default: "The message will not be shown on any content within containers which are selected here. If however a container is selected but a selectable sub container is not selected, contents within the the sub container will display the message."
+#: ./ftw/globalstatusmessage/interfaces.py:33
+msgid "statusmessage_help_exclude_sites"
+msgstr "Die Statusnachricht wird nicht in den hier ausgewählten Sub-Seiten angezeigt."
+
 #. Default: "Active"
-#: ./ftw/globalstatusmessage/interfaces.py:9
+#: ./ftw/globalstatusmessage/interfaces.py:12
 msgid "statusmessage_label_Active"
 msgstr "Aktiv"
 
-#. Default: "error"
-#: ./ftw/globalstatusmessage/interfaces.py:15
-msgid "statusmessage_label_error"
-msgstr "Fehler"
-
-#. Default: "information"
-#: ./ftw/globalstatusmessage/interfaces.py:13
-msgid "statusmessage_label_information"
-msgstr "Information"
+#. Default: "Exclude sites"
+#: ./ftw/globalstatusmessage/interfaces.py:31
+msgid "statusmessage_label_exclude_sites"
+msgstr "Auf Sub-Seiten nicht anzeigen"
 
 #. Default: "Message"
-#: ./ftw/globalstatusmessage/interfaces.py:21
+#: ./ftw/globalstatusmessage/interfaces.py:27
 msgid "statusmessage_label_message"
 msgstr "Nachricht"
 
 #. Default: "Title"
-#: ./ftw/globalstatusmessage/interfaces.py:18
+#: ./ftw/globalstatusmessage/interfaces.py:23
 msgid "statusmessage_label_title"
 msgstr "Titel"
 
 #. Default: "Type"
-#: ./ftw/globalstatusmessage/interfaces.py:12
+#: ./ftw/globalstatusmessage/interfaces.py:16
 msgid "statusmessage_label_type"
 msgstr "Typ"
 
-#. Default: "warning"
-#: ./ftw/globalstatusmessage/interfaces.py:14
-msgid "statusmessage_label_warning"
+#: ./ftw/globalstatusmessage/interfaces.py:18
+msgid "warning"
 msgstr "Warnung"
-
-

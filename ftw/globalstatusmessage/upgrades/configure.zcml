@@ -54,4 +54,13 @@
         profile="ftw.globalstatusmessage:default"
         />
 
+    <!-- 1004 -> 1400 -->
+    <upgrade-step:importProfile
+        title="Update registry: enable new configuration excluded_site"
+        profile="ftw.globalstatusmessage:default"
+        source="1004"
+        destination="1400"
+        directory="profiles/1400"
+        />
+
 </configure>

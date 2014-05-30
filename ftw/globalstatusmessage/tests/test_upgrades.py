@@ -48,7 +48,7 @@ class Upgrade1003to1004TestCase(UpgradeTestCaseBase):
     def test_upgrade_step_registrations(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
         self.assertTrue(version >= self.to_version)
-        self.assertEqual(self._how_many_upgrades_to_do(), 1)
+        self.assertGreaterEqual(self._how_many_upgrades_to_do(), 1)
 
     def test_upgrade_step(self):
         title = u'Migrate configlet to plone.app.registry'

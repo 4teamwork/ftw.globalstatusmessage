@@ -6,4 +6,5 @@
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.type_choice" delete="true" />
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.title_textfield" delete="true" />
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.message_textfield" delete="true" />
+  <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.exclude_sites" delete="true" />
 </registry>

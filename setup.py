@@ -4,6 +4,7 @@ import os
 
 tests_require = [
     'AccessControl',
+    'ftw.builder',
     'ftw.testbrowser',
     'ftw.testing',
     'plone.app.testing',
