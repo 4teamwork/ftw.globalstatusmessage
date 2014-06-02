@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-05-29 10:24+0000\n"
-"PO-Revision-Date: 2014-05-27 15:39-0300\n"
+"PO-Revision-Date: 2014-06-02 11:18-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "información"
 #. Default: "The message will not be shown on any content within containers which are selected here. If however a container is selected but a selectable sub container is not selected, contents within the the sub container will display the message."
 #: ./ftw/globalstatusmessage/interfaces.py:33
 msgid "statusmessage_help_exclude_sites"
-msgstr ""
+msgstr "El mensaje no se mostrará en el contexto de cualquiera de las carpetas listadas aquí. Sin embargo, si una carpeta es seleccionada y contiene a otra carpeta que no es seleccionada, en el contexto de esta última carpeta el mensaje será mostrado."
 
 #. Default: "Active"
 #: ./ftw/globalstatusmessage/interfaces.py:12
@@ -45,7 +45,7 @@ msgstr "Activo"
 #. Default: "Exclude sites"
 #: ./ftw/globalstatusmessage/interfaces.py:31
 msgid "statusmessage_label_exclude_sites"
-msgstr ""
+msgstr "Excluir subsitios"
 
 #. Default: "Message"
 #: ./ftw/globalstatusmessage/interfaces.py:27
@@ -65,5 +65,4 @@ msgstr "Tipo"
 #: ./ftw/globalstatusmessage/interfaces.py:18
 msgid "warning"
 msgstr "advertencia"
-
 
