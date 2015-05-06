@@ -1,0 +1,71 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-05-29 10:24+0000\n"
+"PO-Revision-Date: 2015-05-06 12:59+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Last-Translator: Petri Savolainen <petri.savolainen@iki.fi>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7.5\n"
+"Language: fi\n"
+
+#: ftw/globalstatusmessage/browser/controlpanel.py:9
+msgid "Global Status Message"
+msgstr "Sivustoilmoitin"
+
+#: ftw/globalstatusmessage/browser/config.py:14
+msgid "Global Statusmessage"
+msgstr "Sivustoilmoitin"
+
+#: ftw/globalstatusmessage/browser/controlpanel.py:10
+msgid "Settings for Global Status Message."
+msgstr "Sivustoilmoittimen asetukset"
+
+#: ftw/globalstatusmessage/interfaces.py:19
+msgid "error"
+msgstr "virhe"
+
+#: ftw/globalstatusmessage/interfaces.py:17
+msgid "information"
+msgstr "tiedoksi"
+
+#. Default: "The message will not be shown on any content within containers which are selected here. If however a container is selected but a selectable sub container is not selected, contents within the the sub container will display the message."
+#: ftw/globalstatusmessage/interfaces.py:33
+msgid "statusmessage_help_exclude_sites"
+msgstr "Ilmoitusta ei näytetä valituilla sivustoilla. Huomaa, että valinta ei vaikuta mahdollisiin alisivustoihin: jokainen alisivusto jota ilmoitus ei koske, pitää myös valita."
+
+#. Default: "Active"
+#: ftw/globalstatusmessage/interfaces.py:12
+msgid "statusmessage_label_Active"
+msgstr "Ilmoitus käytössä"
+
+#. Default: "Exclude sites"
+#: ftw/globalstatusmessage/interfaces.py:31
+msgid "statusmessage_label_exclude_sites"
+msgstr "Sivustot joita ilmoitus ei koske"
+
+#. Default: "Message"
+#: ftw/globalstatusmessage/interfaces.py:27
+msgid "statusmessage_label_message"
+msgstr "Ilmoituksen teksti"
+
+#. Default: "Title"
+#: ftw/globalstatusmessage/interfaces.py:23
+msgid "statusmessage_label_title"
+msgstr "Ilmoituksen otsikko"
+
+#. Default: "Type"
+#: ftw/globalstatusmessage/interfaces.py:16
+msgid "statusmessage_label_type"
+msgstr "Ilmoituksen tyyppi"
+
+#: ftw/globalstatusmessage/interfaces.py:18
+msgid "warning"
+msgstr "varoitus"
