@@ -71,9 +71,9 @@ Uninstall the package by using Plone's addon controlpanel or portal_quickInstall
 Links
 =====
 
-- Main github project repository: https://github.com/4teamwork/ftw.globalstatusmessage
-- Issue tracker: https://github.com/4teamwork/ftw.globalstatusmessage/issues
-- Package on pypi: http://pypi.python.org/pypi/ftw.globalstatusmessage
+- Github: https://github.com/4teamwork/ftw.globalstatusmessage
+- Issues: https://github.com/4teamwork/ftw.globalstatusmessage/issues
+- Pypi: http://pypi.python.org/pypi/ftw.globalstatusmessage
 - Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.globalstatusmessage
 
 
