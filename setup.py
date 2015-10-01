@@ -50,6 +50,7 @@ setup(name='ftw.globalstatusmessage',
       zip_safe=False,
 
       install_requires=[
+        'Plone',
         'Products.CMFCore',
         'Products.CMFPlone',
         'Products.GenericSetup',
