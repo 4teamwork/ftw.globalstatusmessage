@@ -5,7 +5,7 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Chameleon support: fix status message class. [jone]
 
 
 1.4.1 (2015-05-06)

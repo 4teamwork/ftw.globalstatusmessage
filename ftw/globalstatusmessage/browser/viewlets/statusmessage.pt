@@ -2,7 +2,7 @@
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     tal:define="settings view/settings;
-                type settings/type_choice;
+                type python:str(settings.type_choice);
                 title settings/title_textfield;
                 message settings/message_textfield">
     <dl class="" tal:attributes="class string: portalMessage ${type}">
