@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4.3 (unreleased)
+1.4.3 (2016-12-02)
 ------------------
 
 - Fix class assertion on DOM-Element.
