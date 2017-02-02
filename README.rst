@@ -30,20 +30,7 @@ is shown on the current context.
 Compatibility
 =============
 
-Plone 4.1
-
-.. image:: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.1.x.cfg/badge/icon
-   :target: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.1.x.cfg
-
-Plone 4.2
-
-.. image:: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.2.x.cfg/badge/icon
-   :target: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.2.x.cfg
-
-Plone 4.3
-
-.. image:: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.3.x.cfg/badge/icon
-   :target: https://jenkins.4teamwork.ch/job/ftw.globalstatusmessage-master-test-plone-4.3.x.cfg
+Supports Plone `4.2`, `4.3`.
 
 
 Installation
