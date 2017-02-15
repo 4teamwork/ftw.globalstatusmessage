@@ -5,6 +5,9 @@ Changelog
 1.4.4 (unreleased)
 ------------------
 
+- Add option to exclude anonymous users from viewing the status message.
+  [hvelarde]
+
 - Drop Plone 4.1 support. [jone]
 
 

@@ -21,6 +21,10 @@ class RegistryTestCase(unittest.TestCase):
         self.assertTrue(hasattr(self.settings, 'enabled_bool'))
         self.assertFalse(self.settings.enabled_bool)
 
+    def test_enabled_anonymous_bool_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'enabled_anonymous_bool'))
+        self.assertTrue(self.settings.enabled_anonymous_bool)
+
     def test_type_choice_record_in_registry(self):
         self.assertTrue(hasattr(self.settings, 'type_choice'))
         self.assertIsNone(self.settings.type_choice)
@@ -40,6 +44,7 @@ class RegistryTestCase(unittest.TestCase):
         BASE_REGISTRY = 'ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.'
         records = [
             BASE_REGISTRY + 'enabled_bool',
+            BASE_REGISTRY + 'enabled_anonymous_bool',
             BASE_REGISTRY + 'type_choice',
             BASE_REGISTRY + 'title_textfield',
             BASE_REGISTRY + 'message_textfield',

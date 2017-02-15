@@ -23,7 +23,15 @@ class UpgradeTestCaseBase(unittest.TestCase):
     def _get_upgrade_step(self, title):
         self.setup.setLastVersionForProfile(self.profile_id, self.from_version)
         upgrades = self.setup.listUpgrades(self.profile_id)
-        steps = [s for s in upgrades if s['title'] == title]
+        steps = []
+        for s in upgrades:
+            try:
+                if s['title'] == title:  # handle single upgrade steps
+                    steps.append(s)
+            except TypeError:
+                if s[0]['title'] == title:  # handle lists of upgrade steps
+                    steps.append(s[0])
+
         assert len(steps) == 1
         return steps[0]
 
@@ -81,3 +89,36 @@ class Upgrade1003to1004TestCase(UpgradeTestCaseBase):
         settings = registry.forInterface(IStatusMessageConfigForm)
         for f in fields:
             self.assertTrue(hasattr(settings, f))
+
+
+class Upgrade1400to1500TestCase(UpgradeTestCaseBase):
+
+    def setUp(self):
+        UpgradeTestCaseBase.setUp(self, u'1400', u'1500')
+
+    def test_upgrade_step_registrations(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertGreaterEqual(version, self.to_version)
+        self.assertGreaterEqual(self._how_many_upgrades_to_do(), 1)
+
+    def test_upgrade_registry(self):
+        title = u'Update registry: enable new configuration enabled_anonymous'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        from plone.registry.interfaces import IRegistry
+        from zope.component import getUtility
+        registry = getUtility(IRegistry)
+
+        # simulate state on previous version
+        record = IStatusMessageConfigForm.__identifier__ + '.enabled_anonymous_bool'
+        del registry.records[record]
+
+        with self.assertRaises(KeyError):
+            registry.forInterface(IStatusMessageConfigForm)
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade_step(step)
+        settings = registry.forInterface(IStatusMessageConfigForm)
+        self.assertTrue(hasattr(settings, 'enabled_anonymous_bool'))
+        self.assertEqual(settings.enabled_anonymous_bool, True)
