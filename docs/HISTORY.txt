@@ -5,6 +5,9 @@ Changelog
 1.4.4 (unreleased)
 ------------------
 
+- Remove indirect dependency on five.grok.
+  [hvelarde]
+
 - Drop Plone 4.1 support. [jone]
 
 
