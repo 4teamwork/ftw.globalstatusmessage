@@ -16,7 +16,7 @@ tests_require = [
 def read(*rnames):
     return open('/'.join(rnames)).read()
 
-version = '1.5.0'
+version = '1.5.1.dev0'
 maintainer = 'Mathias Leimgruber'
 
 
