@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4.4 (unreleased)
+1.5.0 (2017-02-17)
 ------------------
 
 - Add option to exclude anonymous users from viewing the status message.
