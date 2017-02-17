@@ -5,6 +5,9 @@ Changelog
 1.4.4 (unreleased)
 ------------------
 
+- Add option to exclude anonymous users from viewing the status message.
+  [hvelarde]
+
 - Remove indirect dependency on five.grok.
   [hvelarde]
 

@@ -154,3 +154,35 @@ class TestConfiguringStatusMessage(TestCase):
         self.assertTrue(
             statusmessage(),
             'Status message should be visible on pages within subsite.')
+
+    @browsing
+    def test_disable_for_anonymous(self, browser):
+        subsite = create(Builder('folder')
+                         .titled('The Subsite')
+                         .providing(INavigationRoot))
+
+        browser.login().visit(view='global_statusmessage_config')
+        browser.fill(
+            {'Active': True,
+             'Type': 'information',
+             'Title': 'Maintenance',
+             'Message': 'Scheduled Maintenance'}).submit()
+
+        browser.logout().visit(self.portal)
+        self.assertTrue(
+            statusmessage(),
+            'Status should be visible for anonymous by default.')
+
+        browser.login().visit(view='global_statusmessage_config')
+        browser.fill(
+            {'Show to anonymous users?': False}).submit()
+
+        browser.visit(self.portal)
+        self.assertTrue(
+            statusmessage(),
+            'Status should still visible for logged in users.')
+
+        browser.logout().reload()
+        self.assertFalse(
+            statusmessage(),
+            'Status should no longer be visible for anonymous in users.')

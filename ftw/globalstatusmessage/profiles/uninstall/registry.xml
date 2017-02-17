@@ -3,6 +3,7 @@
   <records interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm" remove="true" />
   <!-- BBB: compatibility with Plone 4.2 (plone.app.registry <1.2) -->
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.enabled_bool" delete="true" />
+  <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.enabled_anonymous_bool" delete="true" />
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.type_choice" delete="true" />
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.title_textfield" delete="true" />
   <record name="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm.message_textfield" delete="true" />

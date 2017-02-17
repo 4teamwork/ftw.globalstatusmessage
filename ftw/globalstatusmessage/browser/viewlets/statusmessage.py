@@ -2,6 +2,7 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.utils import is_path_included
+from plone import api
 from plone.app.layout.viewlets import common
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
@@ -19,6 +20,9 @@ class StatusmessageViewlet(common.PathBarViewlet):
         self.settings = registry.forInterface(IStatusMessageConfigForm)
 
         if not self.settings.enabled_bool:
+            return ''
+
+        if api.user.is_anonymous() and not self.settings.enabled_anonymous_bool:
             return ''
 
         if not self.show_in_current_context():

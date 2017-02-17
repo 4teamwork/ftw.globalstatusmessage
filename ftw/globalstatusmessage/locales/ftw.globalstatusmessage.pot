@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-02-17 13:21+0000\n"
+"POT-Creation-Date: 2017-02-17 13:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Update registry: enable new configuration excluded_site"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:19
+#: ./ftw/globalstatusmessage/interfaces.py:24
 msgid "error"
 msgstr ""
 
@@ -54,12 +54,12 @@ msgstr ""
 msgid "ftw.globalstatusmessage.upgrades.1001"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:17
+#: ./ftw/globalstatusmessage/interfaces.py:22
 msgid "information"
 msgstr ""
 
 #. Default: "The message will not be shown on any content within containers which are selected here. If however a container is selected but a selectable sub container is not selected, contents within the the sub container will display the message."
-#: ./ftw/globalstatusmessage/interfaces.py:33
+#: ./ftw/globalstatusmessage/interfaces.py:38
 msgid "statusmessage_help_exclude_sites"
 msgstr ""
 
@@ -68,27 +68,32 @@ msgstr ""
 msgid "statusmessage_label_Active"
 msgstr ""
 
+#. Default: "Show to anonymous users?"
+#: ./ftw/globalstatusmessage/interfaces.py:16
+msgid "statusmessage_label_anonymous"
+msgstr ""
+
 #. Default: "Exclude sites"
-#: ./ftw/globalstatusmessage/interfaces.py:31
+#: ./ftw/globalstatusmessage/interfaces.py:36
 msgid "statusmessage_label_exclude_sites"
 msgstr ""
 
 #. Default: "Message"
-#: ./ftw/globalstatusmessage/interfaces.py:27
+#: ./ftw/globalstatusmessage/interfaces.py:32
 msgid "statusmessage_label_message"
 msgstr ""
 
 #. Default: "Title"
-#: ./ftw/globalstatusmessage/interfaces.py:23
+#: ./ftw/globalstatusmessage/interfaces.py:28
 msgid "statusmessage_label_title"
 msgstr ""
 
 #. Default: "Type"
-#: ./ftw/globalstatusmessage/interfaces.py:16
+#: ./ftw/globalstatusmessage/interfaces.py:21
 msgid "statusmessage_label_type"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/interfaces.py:18
+#: ./ftw/globalstatusmessage/interfaces.py:23
 msgid "warning"
 msgstr ""
 

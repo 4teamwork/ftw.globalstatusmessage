@@ -12,6 +12,11 @@ class IStatusMessageConfigForm(model.Schema):
         title=_(u"statusmessage_label_Active", default=u"Active"),
         required=False)
 
+    enabled_anonymous_bool = schema.Bool(
+        title=_(u"statusmessage_label_anonymous", default=u"Show to anonymous users?"),
+        default=True,  # for backward compatibility
+        required=False)
+
     type_choice = schema.Choice(
         title=_(u"statusmessage_label_type", default=u"Type"),
         values=[_(u"information"),

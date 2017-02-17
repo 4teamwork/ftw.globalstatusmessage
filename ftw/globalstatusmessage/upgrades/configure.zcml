@@ -63,4 +63,18 @@
         directory="profiles/1400"
         />
 
+    <!-- 1400 -> 1500 -->
+    <genericsetup:upgradeSteps
+        source="1400"
+        destination="1500"
+        profile="ftw.globalstatusmessage:default">
+
+      <genericsetup:upgradeDepends
+          title="Update registry: enable new configuration enabled_anonymous"
+          import_steps="plone.app.registry"
+          run_deps="false"
+          />
+
+    </genericsetup:upgradeSteps>
+
 </configure>
