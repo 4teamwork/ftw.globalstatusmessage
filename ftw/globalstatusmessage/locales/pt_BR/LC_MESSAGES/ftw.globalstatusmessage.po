@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-29 10:24+0000\n"
+"POT-Creation-Date: 2017-02-17 13:21+0000\n"
 "PO-Revision-Date: 2014-06-02 11:17-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,37 @@ msgstr "Mensagem de estado global"
 msgid "Global Statusmessage"
 msgstr "Mensagem de estado global"
 
+#: ./ftw/globalstatusmessage/upgrades/configure.zcml:35
+msgid "Install browserlayer."
+msgstr ""
+
+#: ./ftw/globalstatusmessage/configure.zcml:30
+msgid "Provides Global status message"
+msgstr ""
+
 #: ./ftw/globalstatusmessage/browser/controlpanel.py:10
 msgid "Settings for Global Status Message."
 msgstr "Configuração da mensagem de estado global"
 
+#: ./ftw/globalstatusmessage/configure.zcml:38
+msgid "Uninstall ftw.globalstatusmessage"
+msgstr ""
+
+#: ./ftw/globalstatusmessage/upgrades/configure.zcml:64
+msgid "Update registry: enable new configuration excluded_site"
+msgstr ""
+
 #: ./ftw/globalstatusmessage/interfaces.py:19
 msgid "error"
 msgstr "erro"
+
+#: ./ftw/globalstatusmessage/configure.zcml:30
+msgid "ftw.globalstatusmessage"
+msgstr ""
+
+#: ./ftw/globalstatusmessage/upgrades/configure.zcml:26
+msgid "ftw.globalstatusmessage.upgrades.1001"
+msgstr ""
 
 #: ./ftw/globalstatusmessage/interfaces.py:17
 msgid "information"
