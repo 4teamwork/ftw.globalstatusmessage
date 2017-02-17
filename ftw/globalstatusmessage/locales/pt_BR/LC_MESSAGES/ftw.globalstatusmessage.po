@@ -69,7 +69,7 @@ msgstr "Ativo"
 #. Default: "Show to anonymous users?"
 #: ./ftw/globalstatusmessage/interfaces.py:16
 msgid "statusmessage_label_anonymous"
-msgstr "Mostrar usuários anônimos"
+msgstr "Mostrar a usuários anônimos"
 
 #. Default: "Exclude sites"
 #: ./ftw/globalstatusmessage/interfaces.py:36
@@ -94,4 +94,3 @@ msgstr "Tipo"
 #: ./ftw/globalstatusmessage/interfaces.py:23
 msgid "warning"
 msgstr "aviso"
-
