@@ -31,12 +31,14 @@ class StatusmessageViewlet(common.PathBarViewlet):
         if not excluded_site_paths:
             return True
 
-        included_site_paths = set(self._all_sites_paths()) - set(excluded_site_paths)
+        included_site_paths = set(self._all_sites_paths()) \
+                              - set(excluded_site_paths)
         return is_path_included('/'.join(self.context.getPhysicalPath()),
                                 included_site_paths,
                                 excluded_site_paths)
 
     def _all_sites_paths(self):
         vocabulary_factory = getUtility(
-            IVocabularyFactory, name='ftw.globalstatusmessage:sites_vocabulary')
+            IVocabularyFactory,
+            name='ftw.globalstatusmessage:sites_vocabulary')
         return [term.value for term in vocabulary_factory(None)]

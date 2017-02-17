@@ -4,11 +4,10 @@ from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
 from ftw.testbrowser import browser
 from ftw.testbrowser import browsing
 from plone.app.layout.navigation.interfaces import INavigationRoot
+from plone.app.testing import setRoles
 from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
 from unittest2 import TestCase
-import transaction
 
 
 def statusmessage():

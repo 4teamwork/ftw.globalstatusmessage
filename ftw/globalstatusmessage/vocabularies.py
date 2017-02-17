@@ -6,7 +6,8 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 def sites_vocabulary_factory(_records_proxy):
     portal = getSite()
-    terms = [SimpleTerm('/'.join(portal.getPhysicalPath()), title=portal.Title())]
+    terms = [SimpleTerm('/'.join(portal.getPhysicalPath()),
+                        title=portal.Title())]
 
     catalog = getToolByName(portal, 'portal_catalog')
     query = {
