@@ -10,7 +10,6 @@
     <include file="permissions.zcml" />
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
     <include package=".browser" />
-    <include package=".upgrades" />
 
     <five:registerPackage package="." initialize=".initialize" />
     <i18n:registerTranslations directory="locales" />
@@ -28,6 +27,7 @@
         description="Provides Global status message"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
+    <include package=".upgrades" />
 
     <genericsetup:registerProfile
         name="uninstall"
