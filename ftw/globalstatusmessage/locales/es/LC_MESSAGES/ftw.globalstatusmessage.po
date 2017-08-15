@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-02-17 13:23+0000\n"
+"POT-Creation-Date: 2017-08-15 12:54+0000\n"
 "PO-Revision-Date: 2014-06-02 11:18-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
-#: ./ftw/globalstatusmessage/browser/controlpanel.py:9
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:65
+msgid "Changes saved and published."
+msgstr ""
+
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:31
 msgid "Global Status Message"
 msgstr "Mensaje de estado global"
 
@@ -24,16 +28,24 @@ msgstr "Mensaje de estado global"
 msgid "Install browserlayer."
 msgstr ""
 
-#: ./ftw/globalstatusmessage/configure.zcml:30
+#: ./ftw/globalstatusmessage/configure.zcml:29
 msgid "Provides Global status message"
 msgstr ""
 
-#: ./ftw/globalstatusmessage/browser/controlpanel.py:10
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:48
+msgid "Save and publish"
+msgstr ""
+
+#: ./ftw/globalstatusmessage/browser/controlpanel.py:32
 msgid "Settings for Global Status Message."
 msgstr "Configuración del mensaje de estado global"
 
 #: ./ftw/globalstatusmessage/configure.zcml:38
 msgid "Uninstall ftw.globalstatusmessage"
+msgstr ""
+
+#: ./ftw/globalstatusmessage/upgrades/configure.zcml:73
+msgid "Update registry: enable new configuration enabled_anonymous"
 msgstr ""
 
 #: ./ftw/globalstatusmessage/upgrades/configure.zcml:64
@@ -44,7 +56,7 @@ msgstr ""
 msgid "error"
 msgstr "error"
 
-#: ./ftw/globalstatusmessage/configure.zcml:30
+#: ./ftw/globalstatusmessage/configure.zcml:29
 msgid "ftw.globalstatusmessage"
 msgstr ""
 
@@ -94,3 +106,4 @@ msgstr "Tipo"
 #: ./ftw/globalstatusmessage/interfaces.py:23
 msgid "warning"
 msgstr "advertencia"
+

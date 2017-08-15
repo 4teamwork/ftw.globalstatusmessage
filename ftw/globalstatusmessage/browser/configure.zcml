@@ -9,6 +9,13 @@
         permission="ftw.globalstatusmessage.EditMessage"
         />
 
+    <browser:view
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="global_statusmessage_config_receiver"
+        class=".publisher.ConfigReceiverView"
+        permission="ftw.globalstatusmessage.EditMessage"
+        />
+
     <browser:viewlet
         for="*"
         name="ftw.globalstatusmessage.statusmessageviewlet"
