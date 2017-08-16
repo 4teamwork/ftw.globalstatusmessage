@@ -5,7 +5,8 @@ Changelog
 1.6.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Prevent exception if `ftw.publisher.sender` is not installed.
+  Fixes 1.6.0 [mbaechtold]
 
 
 1.6.0 (2017-08-16)

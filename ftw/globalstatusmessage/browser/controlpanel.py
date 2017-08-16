@@ -3,7 +3,6 @@ from Acquisition._Acquisition import aq_inner
 from ftw.globalstatusmessage import _
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.utils import is_profile_installed
-from ftw.publisher.core.utils import decode_for_json
 from plone import api
 from plone.app.registry.browser import controlpanel
 from plone.registry.interfaces import IRegistry
@@ -24,6 +23,7 @@ except pkg_resources.DistributionNotFound:
 else:
     from ftw.publisher.sender.interfaces import IConfig
     from ftw.publisher.sender.utils import sendJsonToRealm
+    from ftw.publisher.core.utils import decode_for_json
 
 
 plone_messagefactory = MessageFactory("plone")
