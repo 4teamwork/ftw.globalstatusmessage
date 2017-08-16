@@ -1,9 +1,27 @@
 # -*- coding: utf-8 -*-
 from ftw.globalstatusmessage.config import PROJECTNAME
+from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
-from plone.app.testing import logout
-from zope.component import getMultiAdapter
-
+from ftw.globalstatusmessage.tests import FunctionalTestCase
+from ftw.globalstatusmessage.tests.helpers import view_registered
+from ftw.publisher.core.communication import createResponse
+from ftw.publisher.core.states import SuccessState
+from ftw.publisher.core.utils import decode_for_json
+from ftw.publisher.core.utils import encode_after_json
+from ftw.publisher.sender.interfaces import IConfig
+from ftw.publisher.sender.persistence import Realm
+from ftw.testbrowser import browsing
+from ftw.testbrowser.pages.statusmessages import info_messages
+from plone import api
+from plone.app.testing import logout, SITE_OWNER_NAME, SITE_OWNER_PASSWORD
+from plone.registry.interfaces import IRegistry
+from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.Five import BrowserView
+from zope.component import getMultiAdapter, getUtility
+from zope.interface import Interface
+from zope.schema import getFieldNames
+import json
+import transaction
 import unittest2 as unittest
 
 
@@ -39,3 +57,98 @@ class ControlPanelTestCase(unittest.TestCase):
         actions = [a.getAction(self)['id']
                    for a in self.controlpanel.listActions()]
         self.assertNotIn('globalstatusmessage', actions)
+
+
+class PublishedControlPanelTestCase(FunctionalTestCase):
+
+    enabled_bool = True
+    enabled_anonymous_bool = True
+    type_choice = u'information'
+    title_textfield = u'Hello World'
+    message_textfield = u'This is the message to the world'
+    exclude_sites = None
+
+    form_data = {
+        'Active': enabled_bool,
+        'Show to anonymous users?': enabled_anonymous_bool,
+        'Type': type_choice,
+        'Title': title_textfield,
+        'Message': message_textfield,
+    }
+
+    expected_settings = {
+        'enabled_bool': enabled_bool,
+        'enabled_anonymous_bool': enabled_anonymous_bool,
+        'type_choice': type_choice,
+        'title_textfield': title_textfield,
+        'message_textfield': message_textfield,
+        'exclude_sites': exclude_sites,
+    }
+
+    payload = json.dumps(decode_for_json(expected_settings))
+
+    def setUp(self):
+        super(PublishedControlPanelTestCase, self).setUp()
+        self.grant('Manager')
+        api.portal.get_tool('portal_setup').runAllImportStepsFromProfile(
+            'profile-ftw.publisher.sender:default',
+            ignore_dependencies=True
+        )
+
+    def test_all_settings_are_tested(self):
+        """
+        This test will fail if new settings are added to "IStatusMessageConfigForm"
+        without having been added in this test case.
+        """
+        self.assertEqual(
+            set(self.expected_settings.keys()),
+            set(getFieldNames(IStatusMessageConfigForm)),
+            msg='Have you added some fields to "IStatusMessageConfigForm" without updating the test case?'
+        )
+
+    @browsing
+    def test_sender(self, browser):
+        intercepted_data = {}
+
+        class MockedReceiverView(BrowserView):
+            def __call__(self):
+                intercepted_data['jsondata'] = self.request.form.get('jsondata')
+                return createResponse(SuccessState())
+
+        config = IConfig(self.portal)
+        config.appendRealm(Realm(1, self.portal.absolute_url(), SITE_OWNER_NAME, SITE_OWNER_PASSWORD))
+        transaction.commit()
+
+        with view_registered(MockedReceiverView, 'global_statusmessage_config_receiver',
+                             required=(IPloneSiteRoot, Interface)):
+            browser.login(SITE_OWNER_NAME).open(view='@@global_statusmessage_config')
+            browser.fill(self.form_data)
+            browser.click_on('Save and publish')
+
+        self.assertDictEqual(
+            self.expected_settings,
+            encode_after_json(json.loads(intercepted_data['jsondata']))
+        )
+
+        self.assertEqual(
+            ['Changes saved and published.'],
+            info_messages()
+        )
+
+    @browsing
+    def test_receiver(self, browser):
+        browser.login().open(
+            self.portal,
+            view='@@global_statusmessage_config_receiver',
+            data={'jsondata': self.payload})
+
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IStatusMessageConfigForm, check=False)
+
+        self.assertDictEqual(
+            {
+                field_name: getattr(settings, field_name)
+                for field_name in getFieldNames(IStatusMessageConfigForm)
+            },
+            self.expected_settings
+        )

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<registry>
+
+  <record interface="ftw.globalstatusmessage.interfaces.IStatusMessageConfigForm"
+          field="enabled_anonymous_bool">
+    <value>True</value>
+  </record>
+
+</registry>
