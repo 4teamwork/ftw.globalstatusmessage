@@ -4,7 +4,6 @@ from ftw.globalstatusmessage import _
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.utils import is_profile_installed
 from ftw.publisher.core.utils import decode_for_json
-from ftw.publisher.sender.utils import sendJsonToRealm
 from plone import api
 from plone.app.registry.browser import controlpanel
 from plone.registry.interfaces import IRegistry
@@ -16,11 +15,15 @@ from zope.component import getUtility
 from zope.i18nmessageid import MessageFactory
 from zope.schema import getFieldNames
 import json
+import pkg_resources
 
 try:
+    pkg_resources.get_distribution('ftw.publisher.sender')
+except pkg_resources.DistributionNotFound:
+    pass
+else:
     from ftw.publisher.sender.interfaces import IConfig
-except ImportError:
-    FTW_PUBLISHER_SENDER_ON_PYTHON_PATH = False
+    from ftw.publisher.sender.utils import sendJsonToRealm
 
 
 plone_messagefactory = MessageFactory("plone")
