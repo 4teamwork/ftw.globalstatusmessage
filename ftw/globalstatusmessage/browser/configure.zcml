@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:browser="http://namespaces.zope.org/browser">
 
     <browser:page
@@ -10,6 +11,7 @@
         />
 
     <browser:view
+        zcml:condition="installed ftw.publisher.sender"
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="global_statusmessage_config_receiver"
         class=".publisher.ConfigReceiverView"
