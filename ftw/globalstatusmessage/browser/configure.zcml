@@ -11,7 +11,7 @@
         />
 
     <browser:view
-        zcml:condition="installed ftw.publisher.sender"
+        zcml:condition="installed ftw.publisher.receiver"
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="global_statusmessage_config_receiver"
         class=".publisher.ConfigReceiverView"
