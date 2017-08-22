@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.6.2 (unreleased)
+1.6.2 (2017-08-22)
 ------------------
 
 - Make the receiving endpoint available if `ftw.publisher.receiver`
