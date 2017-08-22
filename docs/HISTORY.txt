@@ -5,7 +5,8 @@ Changelog
 1.6.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Make the receiving endpoint available if `ftw.publisher.receiver`
+  is installed. Fixes 1.6.1. [mbaechtold]
 
 
 1.6.1 (2017-08-17)

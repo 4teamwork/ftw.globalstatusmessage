@@ -8,6 +8,7 @@ tests_require = [
     'ftw.testbrowser',
     'ftw.testing',
     'ftw.publisher.sender',
+    'ftw.publisher.receiver',
     'plone.app.testing',
     'unittest2',
     'zope.configuration',
