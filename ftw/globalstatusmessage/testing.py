@@ -1,3 +1,4 @@
+from Products.CMFPlone.utils import getFSVersionTuple
 from ftw.builder.testing import BUILDER_LAYER
 from ftw.builder.testing import functional_session_factory
 from ftw.builder.testing import set_builder_session_factory
@@ -14,6 +15,8 @@ handler = logging.StreamHandler(sys.stderr)
 logging.root.addHandler(handler)
 
 
+IS_AT_LEAST_PLONE_5_1 = getFSVersionTuple() >= (5, 1)
+
 class ZCMLLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE, ZSERVER_FIXTURE,)
@@ -29,6 +32,10 @@ class ZCMLLayer(PloneSandboxLayer):
 
         installProduct(app, 'ftw.globalstatusmessage')
 
+    def setUpPloneSite(self, portal):
+        if IS_AT_LEAST_PLONE_5_1:
+            applyProfile(portal, 'plone.app.contenttypes:default')
+
 STATUSMESSAGE_ZCML_LAYER = ZCMLLayer()
 STATUSMESSAGE_ZCML_FUNCTIONAL = FunctionalTesting(
     bases=(STATUSMESSAGE_ZCML_LAYER, ),
@@ -41,6 +48,8 @@ class InstallationLayer(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'ftw.globalstatusmessage:default')
+        if IS_AT_LEAST_PLONE_5_1:
+            applyProfile(portal, 'plone.app.contenttypes:default')
 
 
 STATUSMESSAGE_FIXTURE = InstallationLayer()

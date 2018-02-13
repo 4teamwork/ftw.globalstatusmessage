@@ -30,7 +30,7 @@ is shown on the current context.
 Compatibility
 =============
 
-Supports Plone `4.2`, `4.3`.
+Supports Plone `4.2`, `4.3` and `5.1`.
 
 
 Installation

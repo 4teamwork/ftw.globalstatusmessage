@@ -5,7 +5,7 @@ Changelog
 1.6.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Test against Plone 5.1. [mbaechtold]
 
 
 1.6.2 (2017-08-22)
