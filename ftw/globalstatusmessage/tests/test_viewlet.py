@@ -1,6 +1,7 @@
 from ftw.globalstatusmessage import testing
 from ftw.testbrowser import browsing
 from ftw.testbrowser.pages import plone
+from ftw.testbrowser.tests import IS_PLONE_4
 from unittest2 import TestCase
 
 
@@ -14,8 +15,13 @@ class TestNotInstalled(TestCase):
 
         browser.open()
         self.assertEquals('Plone site', plone.first_heading())
+
+        selector = '#portal-header'
+        if IS_PLONE_4:
+            selector = '#portal-top'
+
         self.assertNotIn(
             'error',
-            browser.css('#portal-top').first.text,
+            browser.css(selector).first.text,
             'The viewlet should not be rendered, but it seems'
             ' to have been rendered with an error.')
