@@ -140,7 +140,9 @@ class PublishedControlPanelTestCase(FunctionalTestCase):
         browser.login().open(
             self.portal,
             view='@@global_statusmessage_config_receiver',
-            data={'jsondata': self.payload})
+            data={'jsondata': self.payload},
+            send_authenticator=True,
+        )
 
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IStatusMessageConfigForm, check=False)
