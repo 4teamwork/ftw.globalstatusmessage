@@ -5,7 +5,7 @@ Changelog
 1.6.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Make Plone 5.1 compatible. [djowett-ftw]
 
 
 1.6.2 (2017-08-22)
