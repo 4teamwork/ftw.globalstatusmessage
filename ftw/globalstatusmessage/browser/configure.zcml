@@ -19,9 +19,20 @@
         />
 
     <browser:viewlet
+        zcml:condition="not-have plone-5"
         for="*"
         name="ftw.globalstatusmessage.statusmessageviewlet"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.statusmessage.StatusmessageViewlet"
+        permission="zope2.View"
+        layer="ftw.globalstatusmessage.interfaces.IGlobalStatusMessageLayer"
+        />
+
+    <browser:viewlet
+        zcml:condition="have plone-5"
+        for="*"
+        name="ftw.globalstatusmessage.statusmessageviewlet"
+        manager="plone.app.layout.viewlets.interfaces.IGlobalStatusMessage"
         class=".viewlets.statusmessage.StatusmessageViewlet"
         permission="zope2.View"
         layer="ftw.globalstatusmessage.interfaces.IGlobalStatusMessageLayer"
