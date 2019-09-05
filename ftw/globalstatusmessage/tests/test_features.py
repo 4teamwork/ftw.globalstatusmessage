@@ -84,7 +84,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_exclude_subsite(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
@@ -121,7 +121,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_exclude_site_root(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
@@ -158,7 +158,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_disable_for_anonymous(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
