@@ -1,0 +1,9 @@
+<style type="text/css">
+
+  /* Hide globalstatusmessage within the control panel
+   * pending fix of Products.CMFPlone #2947
+   */
+  #content #globalstatusmessage {
+    display: none;
+  }
+</style>
