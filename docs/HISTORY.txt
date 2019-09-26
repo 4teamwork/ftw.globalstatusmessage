@@ -2,15 +2,20 @@ Changelog
 =========
 
 
-1.7.0 (unreleased)
+1.7.0 (2019-09-26)
 ------------------
 
 - Drop support for Plone 4.2. [mbaechtold]
+
+- Remove unused plone.app.form dependency. [djowett-ftw]
 
 - Make Plone 5.1 compatible. The global status message is displayed in a
   viewlet for Plone 5 (rather than a template slot). [djowett-ftw]
 
 - Work around duplication of the `plone.globalstatusmessage` viewlet.
+  (See https://github.com/plone/Products.CMFPlone/issues/2947)
+  [djowett-ftw]
+
 
 1.6.2 (2017-08-22)
 ------------------
