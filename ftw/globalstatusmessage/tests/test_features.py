@@ -7,6 +7,7 @@ from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.app.testing import setRoles
 from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import TEST_USER_ID
+from unittest2 import skip
 from unittest2 import TestCase
 
 
@@ -84,7 +85,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_exclude_subsite(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
@@ -121,7 +122,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_exclude_site_root(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
@@ -158,7 +159,7 @@ class TestConfiguringStatusMessage(TestCase):
     @browsing
     def test_disable_for_anonymous(self, browser):
         subsite = create(Builder('folder')
-                         .titled('The Subsite')
+                         .titled(u'The Subsite')
                          .providing(INavigationRoot))
 
         browser.login().visit(view='global_statusmessage_config')
@@ -186,3 +187,22 @@ class TestConfiguringStatusMessage(TestCase):
         self.assertFalse(
             statusmessage(),
             'Status should no longer be visible for anonymous in users.')
+
+    @skip('Await bugfix for #2947 in Products.CMFPlone')
+    @browsing
+    def test_global_status_message_not_duplicated(self, browser):
+        """ Test we have only 1 global status message in the control panel """
+        browser.login(SITE_OWNER_NAME).open(view='@@global_statusmessage_config')
+        browser.fill(
+            {'Active': True,
+             'Type': 'information',
+             'Title': 'Maintenance',
+             'Message': 'Scheduled Maintenance'}).submit()
+
+        browser.visit(view='@@global_statusmessage_config')
+        self.assertEqual(1, len(browser.css('#globalstatusmessage')),
+                         'Duplicate globalstatusmessage in gsm config')
+
+        browser.visit(view='@@mail-controlpanel')
+        self.assertEqual(1, len(browser.css('#globalstatusmessage')),
+                         'Duplicate globalstatusmessage in mail config')

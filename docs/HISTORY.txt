@@ -2,11 +2,15 @@ Changelog
 =========
 
 
-1.6.3 (unreleased)
+1.7.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Drop support for Plone 4.2. [mbaechtold]
 
+- Make Plone 5.1 compatible. The global status message is displayed in a
+  viewlet for Plone 5 (rather than a template slot). [djowett-ftw]
+
+- Work around duplication of the `plone.globalstatusmessage` viewlet.
 
 1.6.2 (2017-08-22)
 ------------------

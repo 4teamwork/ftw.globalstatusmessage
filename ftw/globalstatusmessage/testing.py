@@ -6,6 +6,7 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing.z2 import installProduct
 from plone.testing.z2 import ZSERVER_FIXTURE
+from Products.CMFPlone.utils import getFSVersionTuple
 from zope.configuration import xmlconfig
 import logging
 import sys
@@ -42,6 +43,8 @@ class InstallationLayer(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'ftw.globalstatusmessage:default')
 
+        if getFSVersionTuple() > (5, ):
+            applyProfile(portal, 'plone.app.contenttypes:default')
 
 STATUSMESSAGE_FIXTURE = InstallationLayer()
 STATUSMESSAGE_FUNCTIONAL = FunctionalTesting(
