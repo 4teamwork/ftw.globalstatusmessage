@@ -1,5 +1,6 @@
 from ftw.builder import Builder
 from ftw.builder import create
+from ftw.globalstatusmessage.config import IS_PLONE_5
 from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
 from ftw.testbrowser import browser
 from ftw.testbrowser import browsing
@@ -9,15 +10,33 @@ from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import TEST_USER_ID
 from unittest2 import skip
 from unittest2 import TestCase
+import re
 
 
 def statusmessage():
-    if not browser.css('#globalstatusmessage dl'):
+    if not browser.css('#globalstatusmessage .portalMessage'):
         return None
-    dl = browser.css('#globalstatusmessage dl').first
-    return {'type': dl.classes[1],
-            'title': dl.terms[0],
-            'message': dl.definitions[0]}
+    message = browser.css('#globalstatusmessage .portalMessage').first
+
+    if IS_PLONE_5:
+        # Plone 5: <div class="portalMessage information">
+        #              <strong>Info</strong>
+        #              Message
+        #          </div>
+        title = message.css('strong').first.text
+        text = re.sub(r'^{} *'.format(re.escape(title)), '', message.text)
+    else:
+        # Plone 4: <dl class="portalMessage information">
+        #              <dt>Info</dt>
+        #              <dd>Message</dd>
+        #          </dl>
+        title = message.css('dt').first.text
+        text = message.css('dd').first.text
+
+    type_ = message.classes[1]
+    return {'type': type_,
+            'title': title,
+            'message': text}
 
 
 class TestConfiguringStatusMessage(TestCase):
