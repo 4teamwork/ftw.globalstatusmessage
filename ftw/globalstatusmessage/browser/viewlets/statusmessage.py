@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from ftw.globalstatusmessage.config import IS_PLONE_5
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.utils import is_path_included
 from plone import api
@@ -11,6 +12,7 @@ from zope.schema.interfaces import IVocabularyFactory
 
 class StatusmessageViewlet(common.PathBarViewlet):
     index = ViewPageTemplateFile('statusmessage.pt')
+    is_plone_5 = IS_PLONE_5
 
     def update(self):
         super(StatusmessageViewlet, self).update()
