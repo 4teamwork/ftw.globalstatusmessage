@@ -1,12 +1,26 @@
-<div id="globalstatusmessage" i18n:domain="ftw.globalstatusmessage"
+<html i18n:domain="ftw.globalstatusmessage"
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     tal:define="settings view/settings;
                 type python:str(settings.type_choice.__str__());
                 title settings/title_textfield;
-                message settings/message_textfield">
-    <dl class="" tal:attributes="class string: portalMessage ${type}">
-        <dt tal:content="title">Attention</dt>
-        <dd tal:content="structure message">This is a sample Message</dd>
-    </dl>
-</div>
+                message settings/message_textfield;
+                class string: portalMessage ${type}">
+  <tal:plone_5 tal:condition="view/is_plone_5">
+    <aside id="globalstatusmessage">
+        <div class="" tal:attributes="class class">
+            <strong tal:content="title">Attention</strong>
+            <tal:message tal:content="structure message">This is a sample Message</tal:message>
+        </div>
+    </aside>
+  </tal:plone_5>
+
+  <tal:plone_4 tal:condition="not: view/is_plone_5">
+    <div id="globalstatusmessage">
+      <dl class="" tal:attributes="class class">
+          <dt tal:content="title">Attention</dt>
+          <dd tal:content="structure message">This is a sample Message</dd>
+      </dl>
+    </div>
+  </tal:plone_4>
+</html>
