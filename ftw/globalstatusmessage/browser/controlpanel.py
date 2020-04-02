@@ -55,6 +55,14 @@ class PublishingStatusMessageEditForm(StatusMessageEditForm):
         """
         self.handleSave(self, action)
 
+        unpublished_elements = self.hans()
+        if unpublished_elements:
+            from Products.statusmessages.interfaces import IStatusMessage
+            msg.addStatusMessage(
+                'Wurde gespeichert aber nicht veroffentlicht weil nananan nicht veroffentlicht ist...',
+                type='error')
+            return
+
         self.send_to_receiver()
 
         # Consume Plone messages set by `handleSave` so we can set our own message.
@@ -102,6 +110,26 @@ class PublishingStatusMessageEditForm(StatusMessageEditForm):
         }
 
         return data
+
+    def hans(elisabeth):
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IStatusMessageConfigForm, check=False)
+        fritz = settings.exclude_sites
+        cat = api.portal.get_tool('portal_catalog')
+        blabla = cat.unrestrictedSearchResults(
+            {'path': {'query': settings.exclude_sites, 'depth': 0}})
+
+        from Products.statusmessages.interfaces import IStatusMessage
+        from zope.component import getMultiAdapter
+        from ftw.publisher.sender.workflows.interfaces import IPublisherContextState
+        msg = IStatusMessage(elisabeth.request)
+        unpublished_elements = []
+        for bla in blabla:
+            if not getMultiAdapter((bla.getObject(), elisabeth.request),
+                                   IPublisherContextState).is_published():
+                unpublished_elements.append(bla)
+
+        return unpublished_elements
 
 
 class StatusMessageControlPanel(controlpanel.ControlPanelFormWrapper):
