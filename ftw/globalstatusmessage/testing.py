@@ -1,9 +1,10 @@
 from ftw.builder.testing import BUILDER_LAYER
 from ftw.builder.testing import functional_session_factory
 from ftw.builder.testing import set_builder_session_factory
-from plone.app.testing import applyProfile, PLONE_FIXTURE
+from ftw.globalstatusmessage.tests import builders
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import applyProfile, PLONE_FIXTURE
 from plone.testing.z2 import installProduct
 from plone.testing.z2 import ZSERVER_FIXTURE
 from Products.CMFPlone.utils import getFSVersionTuple
@@ -29,6 +30,7 @@ class ZCMLLayer(PloneSandboxLayer):
             context=configurationContext)
 
         installProduct(app, 'ftw.globalstatusmessage')
+        installProduct(app, 'ftw.subsite')
 
 STATUSMESSAGE_ZCML_LAYER = ZCMLLayer()
 STATUSMESSAGE_ZCML_FUNCTIONAL = FunctionalTesting(
@@ -42,6 +44,7 @@ class InstallationLayer(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'ftw.globalstatusmessage:default')
+        applyProfile(portal, 'ftw.subsite:default')
 
         if getFSVersionTuple() > (5, ):
             applyProfile(portal, 'plone.app.contenttypes:default')

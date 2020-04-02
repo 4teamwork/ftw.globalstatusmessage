@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from ftw.builder import Builder
+from ftw.builder import create
 from ftw.globalstatusmessage.config import PROJECTNAME
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
@@ -12,6 +14,7 @@ from ftw.publisher.sender.interfaces import IConfig
 from ftw.publisher.sender.persistence import Realm
 from ftw.testbrowser import browsing
 from ftw.testbrowser.pages.statusmessages import info_messages
+from ftw.testbrowser.pages.statusmessages import error_messages
 from plone import api
 from plone.app.testing import logout, SITE_OWNER_NAME, SITE_OWNER_PASSWORD
 from plone.registry.interfaces import IRegistry
@@ -133,6 +136,55 @@ class PublishedControlPanelTestCase(FunctionalTestCase):
         self.assertEqual(
             ['Changes saved and published.'],
             info_messages()
+        )
+
+    @browsing
+    def test_sender_with_unpublished_excluded_site(self, browser):
+        intercepted_data = {}
+
+        class MockedReceiverView(BrowserView):
+            def __call__(self):
+                intercepted_data['jsondata'] = self.request.form.get('jsondata')
+                return createResponse(SuccessState())
+
+        config = IConfig(self.portal)
+        config.appendRealm(Realm(1, self.portal.absolute_url(), SITE_OWNER_NAME, SITE_OWNER_PASSWORD))
+        transaction.commit()
+
+        with view_registered(MockedReceiverView, 'global_statusmessage_config_receiver',
+                             required=(IPloneSiteRoot, Interface)):
+            browser.login(SITE_OWNER_NAME)
+
+            # Add workflow state private to a subsite
+            wftool = api.portal.get_tool('portal_workflow')
+            wftool.setChainForPortalTypes(['ftw.subsite.Subsite'], 'plone_workflow')
+            unpublished_site = create(Builder('subsite')
+                                      .titled(u'unpublished')
+                                      .within(self.portal)
+                                      .in_state('private'))
+
+            # open the controlpanel
+            browser.open(self.portal, view='@@global_statusmessage_config')
+            browser.fill(self.form_data)
+
+            # move options to the left and option_labels back to the right.
+            option_labels = [u'unpublished']
+            to_list = browser.css('#form-widgets-exclude_sites-to')
+            from_list = browser.css('#form-widgets-exclude_sites-from')
+
+            for option in from_list.css('option'):
+                to_list.append(option)
+
+            for option_label in option_labels:
+                to_list.append(
+                    from_list.xpath(
+                        'option[text()="{}"]'.format(option_label)))
+
+            browser.click_on('Save and publish')
+
+        self.assertEqual(
+            ['Fritz'],
+            error_messages()
         )
 
     @browsing

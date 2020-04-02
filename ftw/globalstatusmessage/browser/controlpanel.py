@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 from Acquisition._Acquisition import aq_inner
+from Products.statusmessages import STATUSMESSAGEKEY
+from Products.statusmessages.interfaces import IStatusMessage
 from ftw.globalstatusmessage import _
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.utils import is_profile_installed
+from ftw.publisher.sender.workflows.interfaces import IPublisherContextState
 from plone import api
 from plone.app.registry.browser import controlpanel
 from plone.registry.interfaces import IRegistry
-from Products.statusmessages import STATUSMESSAGEKEY
-from Products.statusmessages.interfaces import IStatusMessage
 from z3c.form import button
 from zope.annotation import IAnnotations
+from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.i18nmessageid import MessageFactory
 from zope.schema import getFieldNames
@@ -55,11 +57,13 @@ class PublishingStatusMessageEditForm(StatusMessageEditForm):
         """
         self.handleSave(self, action)
 
-        unpublished_elements = self.hans()
+        unpublished_elements = self.get_unpublished_sites_brains()
         if unpublished_elements:
-            from Products.statusmessages.interfaces import IStatusMessage
+            msg = IStatusMessage(self.request)
+            unpublished_titles = ', '.join(
+                [brain.title for brain in unpublished_elements])
             msg.addStatusMessage(
-                'Wurde gespeichert aber nicht veroffentlicht weil nananan nicht veroffentlicht ist...',
+                _(u'Settings were saved but it couldn\'t be published because {} is not yet published.'.format(unpublished_titles)),
                 type='error')
             return
 
@@ -111,23 +115,22 @@ class PublishingStatusMessageEditForm(StatusMessageEditForm):
 
         return data
 
-    def hans(elisabeth):
+    def get_unpublished_sites_brains(self):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IStatusMessageConfigForm, check=False)
-        fritz = settings.exclude_sites
-        cat = api.portal.get_tool('portal_catalog')
-        blabla = cat.unrestrictedSearchResults(
+
+        if not settings.exclude_sites:
+            return []
+
+        portal_catalog = api.portal.get_tool('portal_catalog')
+        exclude_sites_brains = portal_catalog.unrestrictedSearchResults(
             {'path': {'query': settings.exclude_sites, 'depth': 0}})
 
-        from Products.statusmessages.interfaces import IStatusMessage
-        from zope.component import getMultiAdapter
-        from ftw.publisher.sender.workflows.interfaces import IPublisherContextState
-        msg = IStatusMessage(elisabeth.request)
         unpublished_elements = []
-        for bla in blabla:
-            if not getMultiAdapter((bla.getObject(), elisabeth.request),
+        for brain in exclude_sites_brains:
+            if not getMultiAdapter((brain.getObject(), self.request),
                                    IPublisherContextState).is_published():
-                unpublished_elements.append(bla)
+                unpublished_elements.append(brain)
 
         return unpublished_elements
 
