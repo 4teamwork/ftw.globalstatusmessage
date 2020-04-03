@@ -169,21 +169,23 @@ class PublishedControlPanelTestCase(FunctionalTestCase):
 
             # move options to the left and option_labels back to the right.
             option_labels = [u'unpublished']
-            to_list = browser.css('#form-widgets-exclude_sites-to')
             from_list = browser.css('#form-widgets-exclude_sites-from')
+            to_list = browser.css('#form-widgets-exclude_sites-to')
 
-            for option in from_list.css('option'):
-                to_list.append(option)
+            for option in to_list.css('option'):
+                if option:
+                    from_list.first.node.insert(1, option.node)
 
             for option_label in option_labels:
-                to_list.append(
-                    from_list.xpath(
-                        'option[text()="{}"]'.format(option_label)))
+                option_to_move = from_list.xpath(
+                    'option[text()="{}"]'.format(option_label)).first
+                if option_to_move:
+                    to_list.first.node.insert(1, option_to_move.node)
 
             browser.click_on('Save and publish')
 
         self.assertEqual(
-            ['Fritz'],
+            ['Some message that it was not published...'],
             error_messages()
         )
 
