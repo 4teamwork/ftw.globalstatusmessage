@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from copy import deepcopy
+from ftw.builder import Builder
+from ftw.builder import create
 from ftw.globalstatusmessage.config import PROJECTNAME
 from ftw.globalstatusmessage.interfaces import IStatusMessageConfigForm
 from ftw.globalstatusmessage.testing import STATUSMESSAGE_FUNCTIONAL
@@ -13,6 +16,7 @@ from ftw.publisher.sender.persistence import Realm
 from ftw.testbrowser import browsing
 from ftw.testbrowser.pages.statusmessages import info_messages
 from plone import api
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.app.testing import logout, SITE_OWNER_NAME, SITE_OWNER_PASSWORD
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -82,7 +86,7 @@ class PublishedControlPanelTestCase(FunctionalTestCase):
         'type_choice': type_choice,
         'title_textfield': title_textfield,
         'message_textfield': message_textfield,
-        'exclude_sites': exclude_sites,
+        'exclude_sites': None,
     }
 
     payload = json.dumps(decode_for_json(expected_settings))
@@ -152,4 +156,33 @@ class PublishedControlPanelTestCase(FunctionalTestCase):
                 for field_name in getFieldNames(IStatusMessageConfigForm)
             },
             self.expected_settings
+        )
+
+    @browsing
+    def test_receiver_filters_not_existing_paths_before_setting_them(self, browser):
+        subsite = create(Builder('folder')
+                         .titled(u'subsite')
+                         .providing(INavigationRoot))
+        subsite_path = '/'.join(subsite.getPhysicalPath())
+
+        settings = deepcopy(self.expected_settings)
+        settings['exclude_sites'] = [subsite_path, '/not/existing']
+        payload = json.dumps(decode_for_json(settings))
+
+        browser.login().open(
+            self.portal,
+            view='@@global_statusmessage_config_receiver',
+            data={'jsondata': payload},
+            send_authenticator=True)
+
+        registry = getUtility(IRegistry)
+        store = registry.forInterface(IStatusMessageConfigForm, check=False)
+
+        settings['exclude_sites'].remove('/not/existing')
+        self.assertDictEqual(
+            {
+                field_name: getattr(store, field_name)
+                for field_name in getFieldNames(IStatusMessageConfigForm)
+            },
+            settings
         )

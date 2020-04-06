@@ -5,7 +5,7 @@ Changelog
 1.7.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Filter not existing paths on receiver site. [mathias.leimgruber]
 
 
 1.7.1 (2019-12-09)
