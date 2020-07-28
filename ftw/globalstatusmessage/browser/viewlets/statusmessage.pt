@@ -9,8 +9,8 @@
   <tal:plone_5 tal:condition="view/is_plone_5">
     <aside id="globalstatusmessage">
         <div class="" tal:attributes="class class">
-            <strong tal:content="title">Attention</strong>
-            <tal:message tal:content="structure message">This is a sample Message</tal:message>
+            <strong class="title" tal:content="title">Attention</strong>
+            <span class="content" tal:content="structure message">This is a sample Message</span>
         </div>
     </aside>
   </tal:plone_5>
