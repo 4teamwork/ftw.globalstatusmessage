@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.7.3 (unreleased)
+1.7.3 (2020-07-28)
 ------------------
 
 - Adapt portalMessage structure for plone 5. [mathias.leimgruber]
